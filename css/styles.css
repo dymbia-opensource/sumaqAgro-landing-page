@@ -869,3 +869,235 @@ a, button {
     font-weight: 520;
 }
 
+/* 11. Pricing */
+.pricing {
+    background: #fff;
+}
+
+.pricing__heading {
+    max-width: 760px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.pricing .section-title {
+    text-align: center;
+}
+
+.billing {
+    width: fit-content;
+    margin: 34px auto 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+}
+
+.billing__option {
+    min-width: 92px;
+    min-height: 42px;
+    padding: 9px 18px;
+    color: var(--color-muted);
+    background: transparent;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color .2s, background-color .2s, box-shadow .2s;
+}
+
+.billing__option.is-active {
+    color: #fff;
+    background: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(36, 115, 75, .2);
+}
+
+.billing__saving {
+    margin: 0 13px 0 15px;
+    padding-left: 20px;
+    color: var(--color-muted);
+    border-left: 1px solid #bfd0c3;
+    font-size: .82rem;
+}
+
+.pricing__grid {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+    gap: 22px;
+}
+
+.pricing-card {
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+    padding: 31px;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    border-color: #b5cbbb;
+    box-shadow: var(--shadow-md);
+}
+
+.pricing-card--featured {
+    background: linear-gradient(150deg, #fff 0%, #f1f8f2 100%);
+    border: 1.5px solid #55ad72;
+    box-shadow: 0 14px 38px rgba(31, 106, 65, .12);
+}
+
+.pricing-card__header {
+    min-height: 34px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.pricing-card__header h3 {
+    font-size: 1.03rem;
+    font-weight: 680;
+}
+
+.pricing-card__header span {
+    flex: 0 0 auto;
+    padding: 6px 10px;
+    color: var(--color-primary-dark);
+    background: #dcefe1;
+    border-radius: 999px;
+    font-size: .65rem;
+    font-weight: 700;
+}
+
+.pricing-card__price {
+    margin-top: 23px;
+    color: var(--color-primary-dark);
+    line-height: 1;
+}
+
+.pricing-card__price strong {
+    font-size: clamp(2.6rem, 4vw, 3.35rem);
+    font-weight: 750;
+    letter-spacing: -.055em;
+}
+
+.pricing-card__price small {
+    margin-left: 4px;
+    font-size: .92rem;
+    font-weight: 700;
+}
+
+.pricing-card__description {
+    max-width: 290px;
+    margin-top: 17px;
+    color: var(--color-muted);
+    font-size: .88rem;
+}
+
+.pricing-card__button {
+    width: 100%;
+    margin-top: auto;
+    color: var(--color-primary-dark);
+    background: transparent;
+    border-color: var(--color-primary);
+    font-size: .87rem;
+    font-weight: 650;
+}
+
+.pricing-card__button--primary {
+    color: #fff;
+    background: var(--color-primary);
+}
+
+.pricing-card__button--primary:hover {
+    background: var(--color-primary-dark);
+}
+
+/* 12. Impact */
+.impact {
+    padding-block: 76px;
+    background: var(--color-surface-green);
+}
+
+.impact .container {
+    display: grid;
+    grid-template-columns: minmax(230px, .72fr) minmax(620px, 1.6fr);
+    grid-template-rows: auto auto auto;
+    column-gap: 60px;
+    align-items: center;
+}
+
+.impact .section-title {
+    margin-top: 7px;
+}
+
+.impact .section-lead {
+    max-width: 390px;
+    margin-top: 16px;
+    color: var(--color-muted);
+    font-size: .9rem;
+    text-align: left;
+}
+
+.impact__grid {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.impact-card {
+    min-height: 168px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 26px;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.impact-card::before {
+    content: '';
+    width: 34px;
+    height: 34px;
+    margin-bottom: 14px;
+    background: #e9f6e8 url('../assets/icons/metric.svg') center / 18px no-repeat;
+    border-radius: 10px;
+}
+
+.impact-card h3 {
+    color: var(--color-muted);
+    font-size: .82rem;
+    font-weight: 520;
+}
+
+.impact-card strong {
+    margin-top: 5px;
+    color: var(--color-heading);
+    font-size: clamp(2rem, 3vw, 2.7rem);
+    line-height: 1;
+}
+
+.impact-card span {
+    width: 52px;
+    height: 5px;
+    margin-top: 17px;
+    background: var(--color-primary-light);
+    border-radius: 4px;
+}
+
