@@ -353,3 +353,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLang') || 'en';
     setLanguage(savedLang);
 });
+
+
+function setLanguage(lang) {
+    localStorage.setItem('preferredLang', lang);
+
+    document.documentElement.lang = lang;
+
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (i18nDictionary && i18nDictionary[lang] && i18nDictionary[lang][key]) {
+            element.innerHTML = i18nDictionary[lang][key];
+        }
+    });
+
+    const langButton = document.querySelector('.language');
+    if (langButton) {
+        langButton.setAttribute(
+            'aria-label',
+            lang === 'es' ? 'Idioma actual: español' : 'Current language: English'
+        );
+    }
+}
+
