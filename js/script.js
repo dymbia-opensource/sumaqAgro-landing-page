@@ -377,3 +377,18 @@ function setLanguage(lang) {
     }
 }
 
+
+const langButton = document.querySelector('.language');
+
+if (langButton) {
+    langButton.addEventListener('click', () => {
+        const currentLang =
+            localStorage.getItem('preferredLang') || 'en';
+
+        const newLang =
+            currentLang === 'es' ? 'en' : 'es';
+
+        setLanguage(newLang);
+    });
+}
+
