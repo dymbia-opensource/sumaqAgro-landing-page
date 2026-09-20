@@ -239,7 +239,6 @@ a, button {
     white-space: nowrap;
 }
 
-/* 5. Header */
 .site-header {
     height: var(--header-height);
     position: sticky;
@@ -351,7 +350,6 @@ a, button {
     transition: transform .2s, opacity .2s;
 }
 
-/* 6. Hero */
 .hero {
     min-height: 690px;
     position: relative;
@@ -431,7 +429,6 @@ a, button {
     background: rgba(8, 35, 24, .62);
 }
 
-/* 7. About */
 .about {
     background: #fff;
 }
@@ -477,7 +474,6 @@ a, button {
     font-weight: 650;
 }
 
-/* Team */
 .team {
     padding-top: 80px;
     background: var(--color-surface);
@@ -624,15 +620,10 @@ a, button {
     font-weight: 650;
 }
 
-.button--card::after {
-    content: '→';
-}
-
 .button--card:hover {
     box-shadow: none;
 }
 
-/* 9. Solutions */
 .solutions {
     background: #fff;
 }
@@ -1915,7 +1906,6 @@ a, button {
     text-decoration: underline;
 }
 
-/* Estilos para el Header de las Páginas Legales */
 .legal-header {
     display: flex;
     justify-content: space-between;
@@ -2411,4 +2401,3 @@ main {
     grid-template-columns: 1fr;
     gap: 24px;
 }
-
