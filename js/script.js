@@ -23,11 +23,11 @@ const i18nDictionary = {
         team_eyebrow: "LAS PERSONAS DETRÁS DE LA TECNOLOGÍA",
         team_title: "Nuestro equipo",
         team_desc: "Cinco perfiles comprometidos con acercar la agricultura de precisión a quienes cultivan el futuro del Perú.",
-        team_member1: "Integrante 1",
-        team_member2: "Integrante 2",
-        team_member3: "Integrante 3",
-        team_member4: "Integrante 4",
-        team_member5: "Integrante 5",
+        team_member1: "Solorzano Sullca, Benjamin",
+        team_member2: "Tejada Pumacayo, Yamil Jared",
+        team_member3: "Vargas Enriquez, Jose Carlos",
+        team_member4: "Sanca Condori, Miguel",
+        team_member5: "Duarte Ruffner, Drago Derick",
         team_role: "Rol / especialidad",
 
         audience_eyebrow: "NUESTRA COMUNIDAD",
@@ -196,11 +196,11 @@ const i18nDictionary = {
         team_eyebrow: "THE PEOPLE BEHIND THE TECHNOLOGY",
         team_title: "Our Team",
         team_desc: "Five professionals committed to bringing precision agriculture to those who cultivate the future of Peru.",
-        team_member1: "Member 1",
-        team_member2: "Member 2",
-        team_member3: "Member 3",
-        team_member4: "Member 4",
-        team_member5: "Member 5",
+        team_member1: "Solorzano Sullca, Benjamin",
+        team_member2: "Tejada Pumacayo, Yamil Jared",
+        team_member3: "Vargas Enriquez, Jose Carlos",
+        team_member4: "Sanca Condori, Miguel",
+        team_member5: "Duarte Ruffner, Drago Derick",
         team_role: "Role / Specialty",
 
         audience_eyebrow: "OUR COMMUNITY",
@@ -350,7 +350,7 @@ const i18nDictionary = {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    const savedLang = localStorage.getItem('preferredLang') || 'es';
     setLanguage(savedLang);
 });
 
