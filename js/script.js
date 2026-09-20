@@ -1,56 +1,459 @@
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
-const header = document.querySelector('.site-header');
+const i18nDictionary = {
+    es: {
+        hero_eyebrow: "AGRICULTURA INTELIGENTE PARA UN MEJOR MAÑANA",
+        hero_title: 'Cultiva con Información.<br><span>Decide con Precisión</span>',
+        hero_desc: "SumaqAgro transforma datos satelitales y agrícolas en información útil para ayudarte a monitorear tus cultivos, controlar tus costos y mejorar el valor de tu producción.",
+        hero_explore: 'Explorar <span aria-hidden="true">→</span>',
+        hero_how: "Cómo funciona",
 
-function setMenu(open) {
-    navToggle.setAttribute('aria-expanded', String(open));
-    navToggle.setAttribute('aria-label', open ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
-    navMenu.classList.toggle('is-open', open);
-    document.body.classList.toggle('menu-open', open);
+        nav_start: "Inicio",
+        nav_about: "Nosotros",
+        nav_solutions: "Soluciones",
+        nav_plans: "Planes",
+        nav_impact: "Impacto",
+        nav_login: "Iniciar sesión",
+        nav_register: "Registrarse",
+        nav_lang_label: "ES",
+
+        about_eyebrow: "SOBRE SUMAQAGRO",
+        about_title: "Nosotros",
+        about_subtitle: "Democratizamos la agricultura de precisión en el Perú",
+        about_desc: "<strong>SumaqAgro</strong> nace para cerrar la brecha de tecnificación en las cuencas de papa y café sin exigir costosos sensores en campo. Transformamos imágenes satelitales abiertas y datos agronómicos en herramientas accesibles de monitoreo, cálculo de costos reales y certificación de calidad, permitiendo que productores y organizaciones agrarias tomen decisiones con respaldo técnico.",
+
+        team_eyebrow: "LAS PERSONAS DETRÁS DE LA TECNOLOGÍA",
+        team_title: "Nuestro equipo",
+        team_desc: "Cinco perfiles comprometidos con acercar la agricultura de precisión a quienes cultivan el futuro del Perú.",
+        team_member1: "Solorzano Sullca, Benjamin",
+        team_member2: "Tejada Pumacayo, Yamil Jared",
+        team_member3: "Vargas Enriquez, Jose Carlos",
+        team_member4: "Sanca Condori, Miguel",
+        team_member5: "Duarte Ruffner, Drago Derick",
+        team_role: "Rol / especialidad",
+
+        audience_eyebrow: "NUESTRA COMUNIDAD",
+        audience_title: "¿A quién ayudamos?",
+        audience_desc: "Trabajamos con quienes hacen posible la seguridad alimentaria del país.",
+        audience_tag1: "Agricultura familiar",
+        audience_card1_title: "Agricultores independientes",
+        audience_card1_focus: "Foco: Papa y café en secano",
+        audience_card1_btn: "Registrar mi parcela →",
+        audience_tag2: "Organizaciones agrarias",
+        audience_card2_title: "Líderes de cooperativas",
+        audience_card2_focus: "Foco: Acopio colectivo y trazabilidad",
+        audience_card2_btn: "Gestionar cooperativa →",
+        audience_tag3: "Asistencia técnica",
+        audience_card3_title: "Asesores técnicos y agrónomos",
+        audience_card3_focus: "Foco: Monitoreo multicampo",
+        audience_card3_btn: "Unirme como asesor →",
+
+        solutions_eyebrow: "TECNOLOGÍA QUE GENERA VALOR",
+        solutions_title: "Soluciones y características",
+        solutions_desc: "Herramientas simples y poderosas para tomar mejores decisiones en el campo.",
+        sol1_title: "Monitoreo Satelital de Vigor y Humedad",
+        sol1_desc: "Panel basado en imágenes de satélites abiertos para calcular índices de vegetación (NDVI) y estrés hídrico de tus parcelas, sin adquirir ni instalar hardware físico en tierra.",
+        sol1_result: "Reduce hasta un 25% las mermas causadas por heladas y sequías no detectadas a tiempo.",
+        sol2_title: "Contabilidad de Costos por Lote",
+        sol2_desc: "Módulo para registrar jornales, insumos agrícolas y maquinaria en tiempo real. Calcula de forma automática el costo unitario por quintal o tonelada y fija tu punto de equilibrio financiero.",
+        sol2_result: "Evita ventas a pérdida frente a acopiadores y consolida cuadernos de campo 50% más rápido.",
+        sol3_title: "Certificación Digital de Calidad de Cosecha",
+        sol3_desc: "Genera reportes digitales verificables con la clasificación de calibres en papa o el perfil y puntaje de taza en café, protegiendo tu producción ante penalizaciones arbitrarias en el acopio.",
+        sol3_result: "Sustento formal para negociar sobreprecios en nichos especiales y mercados de exportación.",
+        sol4_title: "Prescripciones y Alertas Agronómicas",
+        sol4_desc: "Sistema centralizado para el envío de recomendaciones técnicas preventivas y recetas fitosanitarias digitales para combatir plagas como la roya amarilla o el gorgojo de los Andes.",
+        sol4_result: "Permite a los asesores técnicos supervisar un 40% más de hectáreas sin traslados continuos.",
+
+        demo_eyebrow: "DEMO DEL PRODUCTO",
+        demo_title: "Conoce SumaqAgro en acción",
+        demo_subtitle: "Video demostrativo",
+        demo_label: "Tecnología aplicada al campo",
+        demo_status: "Reproduce una vista general de SumaqAgro",
+
+        plans_eyebrow: "PLANES",
+        plans_title: "Elige el plan que se adapte a tus necesidades",
+        plans_month: "Mes",
+        plans_year: "Anual",
+        plans_year_suffix: "/año",
+        plans_month_suffix: "/mes",
+        plans_saving: "Ahorra 2 meses con el plan anual",
+        plan1_name: "Plan Semilla",
+        plan1_desc: "1 parcela, NDVI básico y registro de jornales.",
+        plan1_btn: "Empezar gratis",
+        plan2_name: "Cooperativa Pro",
+        plan2_badge: "Más popular",
+        plan2_desc: "50 productores, certificación de calibres y raza, exportación de reportes.",
+        plan2_btn: "Suscribir cooperativa",
+        plan3_name: "Plan Asesor Técnico",
+        plan3_desc: "20 fundos supervisados, recetas técnicas y NDVI avanzado.",
+        plan3_btn: "Prueba de 14 días",
+
+        impact_eyebrow: "RESULTADOS REALES",
+        impact_title: "Impacto",
+        impact_lead: "Métricas que sustentan nuestro compromiso con la pequeña agricultura y testimonios de quienes ya confían en SumaqAgro",
+        impact_stat1: "Has. de papa",
+        impact_stat2: "Familias cafeteras",
+        impact_stat3: "Sin cobertura técnica",
+
+        testimonials_eyebrow: "VOCES QUE NOS INSPIRAN",
+        testimonials_title: "Lo que dicen nuestros usuarios",
+        quote1: "“Ahora sé cuándo regar y cuánto me cuesta cada saco de papa.”",
+        author1: "Juan Huamán, productor de papa",
+        quote2: "“La certificación digital nos abrió mejores precios de exportación.”",
+        author2: "Elena Vargas, cooperativa cafetalera",
+
+        cta_title: "Empieza a decidir con precisión hoy",
+        cta_desc: "Únete a una comunidad que cultiva un futuro mejor con tecnología.",
+        cta_button: "Registrarse gratis",
+
+        terms_eyebrow: "INFORMACIÓN LEGAL",
+        terms_title: "Términos de Servicio",
+        terms_updated: "Última actualización: Septiembre 2026",
+        terms_sec1_title: "1. Aceptación de los Términos",
+        terms_sec1_desc: "Al acceder y utilizar la plataforma SumaqAgro, el usuario acepta de manera expresa y sin reservas los presentes Términos y Condiciones. Si no está de acuerdo con alguno de los puntos descritos, le solicitamos abstenerse de utilizar nuestros servicios digitales y herramientas de monitoreo.",
+        terms_sec2_title: "2. Descripción del Servicio",
+        terms_sec2_desc: "SumaqAgro provee herramientas tecnológicas orientadas a la agricultura de precisión, incluyendo el procesamiento de imágenes satelitales (NDVI, estrés hídrico), contabilidad de costos por lote y certificación digital de calidad. El usuario entiende que las métricas e índices satelitales constituyen herramientas de soporte técnico para la toma de decisiones y no sustituyen una inspección profesional presencial.",
+        terms_sec3_title: "3. Registro y Cuentas de Usuario",
+        terms_sec3_desc: "Para acceder a funcionalidades avanzadas (como los planes Cooperativa Pro o Asesor Técnico), el usuario deberá registrarse proporcionando información veraz y actualizada. Es responsabilidad exclusiva del usuario mantener la confidencialidad de sus credenciales de acceso.",
+        terms_sec4_title: "4. Propiedad Intelectual",
+        terms_sec4_desc: "Todos los derechos de propiedad intelectual sobre el código, diseño, marcas, logotipos, algoritmos y metodologías de SumaqAgro son titularidad exclusiva de SumaqAgro Solutions. Se prohíbe la reproducción total o parcial sin autorización previa por escrito.",
+        terms_sec5_title: "5. Limitación de Responsabilidad",
+        terms_sec5_desc: "SumaqAgro realiza sus mejores esfuerzos por garantizar la precisión y disponibilidad continua de los datos satelitales y reportes. Sin embargo, no se responsabiliza por imponderables derivados de condiciones meteorológicas extremas, interrupciones de los proveedores de datos satelitales de acceso abierto o decisiones operativas tomadas unilateralmente por el productor en el campo.",
+
+        legal_btn_home: "Inicio",
+        legal_eyebrow: "INFORMACIÓN LEGAL",
+
+        // Cookie Policy
+        cookie_title: "Política de Cookies",
+        cookie_updated: "Última actualización: Septiembre de 2026",
+        cookie_s1_title: "1. ¿Qué son las cookies?",
+        cookie_s1_desc: "Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo al visitar nuestra plataforma web para garantizar el funcionamiento técnico y la personalización de tu experiencia.",
+        cookie_s2_title: "2. Tipos de cookies que utilizamos",
+        cookie_s2_item1: "<strong>Cookies esenciales:</strong> Necesarias para mantener tu sesión activa y permitir la navegación segura en la aplicación.",
+        cookie_s2_item2: "<strong>Cookies de preferencias:</strong> Almacenan configuraciones del usuario, como la selección del idioma (ES/EN).",
+        cookie_s2_item3: "<strong>Cookies analíticas:</strong> Ayudan a entender cómo interactúan los usuarios con la plataforma para mejorar el servicio.",
+        cookie_s3_title: "3. Cómo gestionar las cookies",
+        cookie_s3_desc: "Puedes modificar o desactivar las cookies directamente desde la configuración de tu navegador web en cualquier momento.",
+
+        // Privacy Policy
+        privacy_title: "Política de Privacidad",
+        privacy_updated: "Última actualización: Septiembre de 2026",
+        privacy_s1_title: "1. Información que recopilamos",
+        privacy_s1_desc: "En SumaqAgro recopilamos datos personales e información agrícola para prestar nuestros servicios de agricultura de precisión, incluyendo:",
+        privacy_s1_item1: "<strong>Datos de identificación:</strong> Nombre, correo electrónico y número de contacto.",
+        privacy_s1_item2: "<strong>Datos de ubicación:</strong> Georreferenciación de parcelas o fundos registrados.",
+        privacy_s1_item3: "<strong>Información agronómica:</strong> Registros de cultivos y costos operativos ingresados por el usuario.",
+        privacy_s2_title: "2. Uso de la información",
+        privacy_s2_desc: "La información recopilada se utiliza exclusivamente para:",
+        privacy_s2_item1: "Procesar imágenes satelitales e índices de vegetación (NDVI).",
+        privacy_s2_item2: "Generar reportes y certificados digitales de producción.",
+        privacy_s2_item3: "Permitir la comunicación técnica y soporte agronómico.",
+        privacy_s3_title: "3. Protección y almacenamiento de datos",
+        privacy_s3_desc: "Implementamos medidas de seguridad técnicas para proteger tus datos de accesos no autorizados. No compartimos ni vendemos datos personales a terceros.",
+        privacy_s4_title: "4. Contacto",
+        privacy_s4_desc: "Para consultas sobre el tratamiento de tus datos, puedes escribirnos a <a href='mailto:contacto@sumaqagro.pe'>contacto@sumaqagro.pe</a>.",
+
+        footer_desc: "Proveedor líder de soluciones agrícolas para una agricultura sostenible y rentable.",
+        footer_col1_title: "Productos",
+        footer_col1_l1: "Sistemas Inteligentes de Riego",
+        footer_col1_l2: "Sensores de Calidad de Suelo",
+        footer_col1_l3: "Monitoreo con Drones",
+        footer_col1_l4: "Cosecha Automatizada",
+        footer_col1_l5: "Software de Gestión Agrícola",
+        footer_col2_title: "Enlaces Rápidos",
+        footer_col2_l1: "Sobre Nosotros",
+        footer_col2_l2: "Nuestras Soluciones",
+        footer_col2_l3: "Casos de Estudio",
+        footer_col2_l4: "Sostenibilidad",
+        footer_col2_l5: "Noticias y Novedades",
+        footer_col3_title: "Soporte",
+        footer_col3_l1: "Centro de Ayuda",
+        footer_col3_l2: "Contacto",
+        footer_col3_l3: "Documentación",
+        footer_col3_l4: "Estado del Sistema",
+        footer_col3_l5: "Solicitar Demo",
+        footer_privacy: "Política de Privacidad",
+        footer_terms: "Términos de Servicio",
+        footer_cookie: "Política de Cookies"
+    },
+    en: {
+        hero_eyebrow: "SMART AGRICULTURE FOR A BETTER TOMORROW",
+        hero_title: 'Cultivate with Information.<br><span>Decide with Precision</span>',
+        hero_desc: "SumaqAgro transforms satellite and agricultural data into actionable insights to help you monitor crops, control costs, and improve production value.",
+        hero_explore: 'Explore <span aria-hidden="true">→</span>',
+        hero_how: "How it works",
+
+        nav_start: "Home",
+        nav_about: "About Us",
+        nav_solutions: "Solutions",
+        nav_plans: "Plans",
+        nav_impact: "Impact",
+        nav_login: "Sign In",
+        nav_register: "Register",
+        nav_lang_label: "EN",
+
+        about_eyebrow: "ABOUT SUMAQAGRO",
+        about_title: "About Us",
+        about_subtitle: "Democratizing precision agriculture in Peru",
+        about_desc: "<strong>SumaqAgro</strong> was created to bridge the tech gap in potato and coffee basins without requiring expensive ground sensors. We convert open satellite imagery and agronomic data into accessible monitoring, real-cost accounting, and quality certification tools, allowing farmers and agricultural organizations to make technically supported decisions.",
+
+        team_eyebrow: "THE PEOPLE BEHIND THE TECHNOLOGY",
+        team_title: "Our Team",
+        team_desc: "Five professionals committed to bringing precision agriculture to those who cultivate the future of Peru.",
+        team_member1: "Solorzano Sullca, Benjamin",
+        team_member2: "Tejada Pumacayo, Yamil Jared",
+        team_member3: "Vargas Enriquez, Jose Carlos",
+        team_member4: "Sanca Condori, Miguel",
+        team_member5: "Duarte Ruffner, Drago Derick",
+        team_role: "Role / Specialty",
+
+        audience_eyebrow: "OUR COMMUNITY",
+        audience_title: "Who do we help?",
+        audience_desc: "We work with those who make national food security possible.",
+        audience_tag1: "Family Farming",
+        audience_card1_title: "Independent Farmers",
+        audience_card1_focus: "Focus: Rainfed potato and coffee",
+        audience_card1_btn: "Register my plot →",
+        audience_tag2: "Agricultural Organizations",
+        audience_card2_title: "Cooperative Leaders",
+        audience_card2_focus: "Focus: Collective collection & traceability",
+        audience_card2_btn: "Manage cooperative →",
+        audience_tag3: "Technical Assistance",
+        audience_card3_title: "Technical Advisors & Agronomists",
+        audience_card3_focus: "Focus: Multi-field monitoring",
+        audience_card3_btn: "Join as an advisor →",
+
+        solutions_eyebrow: "VALUE-GENERATING TECHNOLOGY",
+        solutions_title: "Solutions & Features",
+        solutions_desc: "Simple and powerful tools for better decision-making in the field.",
+        sol1_title: "Satellite Vigor & Moisture Monitoring",
+        sol1_desc: "Dashboard based on open satellite imagery to calculate vegetation indices (NDVI) and water stress without buying or installing physical ground hardware.",
+        sol1_result: "Reduces crop losses caused by undetected frosts and droughts by up to 25%.",
+        sol2_title: "Cost Accounting per Lot",
+        sol2_desc: "Module to log day labor, agricultural inputs, and machinery in real time. Automatically calculates unit cost per quintal or ton and sets your financial break-even point.",
+        sol2_result: "Avoid selling at a loss to middlemen and consolidate field logbooks 50% faster.",
+        sol3_title: "Digital Harvest Quality Certification",
+        sol3_desc: "Generates verifiable digital reports with potato size grading or coffee cup scores, protecting your yield from arbitrary price cuts at collection points.",
+        sol3_result: "Formal proof to negotiate price premiums in specialty and export markets.",
+        sol4_title: "Agronomic Prescriptions & Alerts",
+        sol4_desc: "Centralized system for preventive technical advice and digital phytosanitary recipes to fight pests like coffee rust or Andean potato weevil.",
+        sol4_result: "Allows technical advisors to supervise 40% more hectares without constant travel.",
+
+        demo_eyebrow: "PRODUCT DEMO",
+        demo_title: "See SumaqAgro in action",
+        demo_subtitle: "Demonstration Video",
+        demo_label: "Technology applied to fields",
+        demo_status: "Play an overview video of SumaqAgro",
+
+        plans_eyebrow: "PLANS",
+        plans_title: "Choose the plan that fits your needs",
+        plans_month: "Month",
+        plans_year: "Annual",
+        plans_year_suffix: "/year",
+        plans_month_suffix: "/month",
+        plans_saving: "Save 2 months with the annual plan",
+        plan1_name: "Seed Plan",
+        plan1_desc: "1 plot, basic NDVI, and day labor logging.",
+        plan1_btn: "Start for free",
+        plan2_name: "Cooperative Pro",
+        plan2_badge: "Most popular",
+        plan2_desc: "50 farmers, size and variety certification, report export.",
+        plan2_btn: "Subscribe cooperative",
+        plan3_name: "Technical Advisor Plan",
+        plan3_desc: "20 supervised farms, technical recipes, and advanced NDVI.",
+        plan3_btn: "14-day free trial",
+
+        impact_eyebrow: "REAL RESULTS",
+        impact_title: "Impact",
+        impact_lead: "Metrics supporting our commitment to smallholder farmers and testimonials from those who already trust SumaqAgro.",
+        impact_stat1: "Hectares of potato",
+        impact_stat2: "Coffee families",
+        impact_stat3: "Without technical support",
+
+        testimonials_eyebrow: "VOICES THAT INSPIRE US",
+        testimonials_title: "What our users say",
+        quote1: "“Now I know when to irrigate and how much each bag of potatoes costs me.”",
+        author1: "Juan Huamán, potato farmer",
+        quote2: "“Digital certification opened up better export prices for us.”",
+        author2: "Elena Vargas, coffee cooperative",
+
+        cta_title: "Start making precise decisions today",
+        cta_desc: "Join a community cultivating a better future through technology.",
+        cta_button: "Register for free",
+
+        terms_eyebrow: "LEGAL INFORMATION",
+        terms_title: "Terms of Service",
+        terms_updated: "Last updated: September 2026",
+        terms_sec1_title: "1. Acceptance of Terms",
+        terms_sec1_desc: "By accessing and using the SumaqAgro platform, the user expressly and unreservedly accepts these Terms and Conditions. If you do not agree with any of the points described, please refrain from using our digital services and monitoring tools.",
+        terms_sec2_title: "2. Description of Service",
+        terms_sec2_desc: "SumaqAgro provides technological tools oriented towards precision agriculture, including satellite image processing (NDVI, water stress), lot cost accounting, and digital quality certification. The user understands that satellite metrics and indices serve as technical support tools for decision-making and do not replace in-person professional inspection.",
+        terms_sec3_title: "3. User Registration and Accounts",
+        terms_sec3_desc: "To access advanced features (such as Cooperative Pro or Technical Advisor plans), the user must register by providing accurate and updated information. It is the user's sole responsibility to maintain the confidentiality of their access credentials.",
+        terms_sec4_title: "4. Intellectual Property",
+        terms_sec4_desc: "All intellectual property rights regarding the code, design, trademarks, logos, algorithms, and methodologies of SumaqAgro are the exclusive property of SumaqAgro Solutions. Total or partial reproduction without prior written authorization is prohibited.",
+        terms_sec5_title: "5. Limitation of Liability",
+        terms_sec5_desc: "SumaqAgro makes its best efforts to guarantee the accuracy and continuous availability of satellite data and reports. However, it is not responsible for unforeseen events resulting from extreme weather conditions, open-access satellite data provider disruptions, or operational decisions made unilaterally by the producer in the field.",
+
+        legal_btn_home: "Home",
+        legal_eyebrow: "LEGAL INFORMATION",
+
+        // Cookie Policy
+        cookie_title: "Cookie Policy",
+        cookie_updated: "Last updated: September 2026",
+        cookie_s1_title: "1. What are cookies?",
+        cookie_s1_desc: "Cookies are small text files stored on your device when visiting our web platform to ensure technical operation and personalize your experience.",
+        cookie_s2_title: "2. Types of cookies we use",
+        cookie_s2_item1: "<strong>Essential cookies:</strong> Required to keep your session active and enable secure navigation.",
+        cookie_s2_item2: "<strong>Preference cookies:</strong> Store user settings, such as language selection (ES/EN).",
+        cookie_s2_item3: "<strong>Analytical cookies:</strong> Help understand how users interact with the platform to improve the service.",
+        cookie_s3_title: "3. How to manage cookies",
+        cookie_s3_desc: "You can modify or disable cookies directly through your web browser settings at any time.",
+
+        // Privacy Policy
+        privacy_title: "Privacy Policy",
+        privacy_updated: "Last updated: September 2026",
+        privacy_s1_title: "1. Information We Collect",
+        privacy_s1_desc: "At SumaqAgro we collect personal data and agricultural information to provide our precision agriculture services, including:",
+        privacy_s1_item1: "<strong>Identification data:</strong> Name, email address, and contact number.",
+        privacy_s1_item2: "<strong>Location data:</strong> Georeferencing of registered plots or farms.",
+        privacy_s1_item3: "<strong>Agronomic information:</strong> Crop records and operational costs entered by the user.",
+        privacy_s2_title: "2. Use of Information",
+        privacy_s2_desc: "The collected information is used exclusively to:",
+        privacy_s2_item1: "Process satellite images and vegetation indices (NDVI).",
+        privacy_s2_item2: "Generate digital production reports and certificates.",
+        privacy_s2_item3: "Enable technical communication and agronomic support.",
+        privacy_s3_title: "3. Data Protection and Storage",
+        privacy_s3_desc: "We implement technical security measures to protect your data from unauthorized access. We do not share or sell personal data to third parties.",
+        privacy_s4_title: "4. Contact",
+        privacy_s4_desc: "For inquiries regarding the processing of your data, you can email us at <a href='mailto:contacto@sumaqagro.pe'>contacto@sumaqagro.pe</a>.",
+
+        // Footer
+        footer_desc: "Leading provider of agricultural solutions for sustainable and profitable farming.",
+        footer_col1_title: "Products",
+        footer_col1_l1: "Smart Irrigation Systems",
+        footer_col1_l2: "Soil Quality Sensors",
+        footer_col1_l3: "Drone Crop Monitoring",
+        footer_col1_l4: "Automated Harvesting",
+        footer_col1_l5: "Farm Management Software",
+        footer_col2_title: "Quick Links",
+        footer_col2_l1: "About Us",
+        footer_col2_l2: "Our Solutions",
+        footer_col2_l3: "Case Studies",
+        footer_col2_l4: "Sustainability",
+        footer_col2_l5: "News & Insights",
+        footer_col3_title: "Support",
+        footer_col3_l1: "Help Center",
+        footer_col3_l2: "Contact Us",
+        footer_col3_l3: "Documentation",
+        footer_col3_l4: "System Status",
+        footer_col3_l5: "Request Demo",
+        footer_privacy: "Privacy Policy",
+        footer_terms: "Terms of Service",
+        footer_cookie: "Cookie Policy"
+    }
 }
 
-navToggle.addEventListener('click', () => {
-    setMenu(navToggle.getAttribute('aria-expanded') !== 'true');
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('preferredLang') || 'es';
+    setLanguage(savedLang);
 });
 
-navMenu.addEventListener('click', (event) => {
-    if (event.target.closest('a')) setMenu(false);
-});
 
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') setMenu(false);
-});
+function setLanguage(lang) {
+    localStorage.setItem('preferredLang', lang);
+    document.documentElement.lang = lang;
 
-document.addEventListener('click', (event) => {
-    if (navMenu.classList.contains('is-open') && !header.contains(event.target)) setMenu(false);
-});
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (i18nDictionary && i18nDictionary[lang] && i18nDictionary[lang][key]) {
+            element.innerHTML = i18nDictionary[lang][key];
+        }
+    });
 
-window.addEventListener('resize', () => {
-    if (window.innerWidth >= 1024) setMenu(false);
-});
+    const activeBillingBtn = document.querySelector('.billing__option.is-active');
+    const activeBilling = activeBillingBtn ? activeBillingBtn.getAttribute('data-billing') : 'monthly';
 
-const billingOptions = document.querySelectorAll('.billing__option');
+    document.querySelectorAll('.price-period').forEach(el => {
+        if (activeBilling === 'annual') {
+            el.textContent = lang === 'es' ? '/año' : '/year';
+        } else {
+            el.textContent = lang === 'es' ? '/mes' : '/month';
+        }
+    });
 
-billingOptions.forEach((option) => {
-    option.addEventListener('click', () => {
-        const period = option.dataset.billing;
+    const langButton = document.querySelector('.language');
+    if (langButton) {
+        langButton.setAttribute(
+            'aria-label',
+            lang === 'es' ? 'Idioma actual: español' : 'Current language: English'
+        );
+    }
+}
 
-        billingOptions.forEach((button) => {
-            const active = button === option;
-            button.classList.toggle('is-active', active);
-            button.setAttribute('aria-pressed', String(active));
+const langButton = document.querySelector('.language');
+
+if (langButton) {
+    langButton.addEventListener('click', () => {
+        const currentLang =
+            localStorage.getItem('preferredLang') || 'en';
+
+        const newLang =
+            currentLang === 'es' ? 'en' : 'es';
+
+        setLanguage(newLang);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const billingContainer = document.querySelector('.billing');
+    if (!billingContainer) return;
+
+    const billingButtons = billingContainer.querySelectorAll('.billing__option');
+    const savingBadge = billingContainer.querySelector('.billing__saving');
+
+    function switchBilling(selectedBilling) {
+        billingButtons.forEach(btn => {
+            const isSelected = btn.getAttribute('data-billing') === selectedBilling;
+            btn.classList.toggle('is-active', isSelected);
+            btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
         });
 
-        document.querySelectorAll('[data-monthly][data-annual]').forEach((pricePart) => {
-            pricePart.textContent = pricePart.dataset[period];
+        const priceValues = document.querySelectorAll('.price-val');
+        const pricePeriods = document.querySelectorAll('.price-period');
+
+        priceValues.forEach(el => el.classList.add('price-updating'));
+        pricePeriods.forEach(el => el.classList.add('price-updating'));
+
+        setTimeout(() => {
+            priceValues.forEach(el => {
+                const newPrice = el.getAttribute(`data-${selectedBilling}`);
+                if (newPrice) el.textContent = newPrice;
+                el.classList.remove('price-updating');
+            });
+
+            pricePeriods.forEach(el => {
+                const newPeriod = el.getAttribute(`data-${selectedBilling}`);
+                if (newPeriod) el.textContent = newPeriod;
+                el.classList.remove('price-updating');
+            });
+        }, 150);
+    }
+
+    billingButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const mode = btn.getAttribute('data-billing');
+            switchBilling(mode);
         });
     });
-});
 
-const demoButton = document.querySelector('.demo-player__play');
-const demoStatus = document.querySelector('.demo-player__status');
-
-demoButton?.addEventListener('click', () => {
-    demoStatus.textContent = 'El video demostrativo se añadirá próximamente.';
-    demoButton.setAttribute('aria-label', 'Video demostrativo disponible próximamente');
+    if (savingBadge) {
+        savingBadge.addEventListener('click', () => switchBilling('annual'));
+        savingBadge.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                switchBilling('annual');
+            }
+        });
+    }
 });
