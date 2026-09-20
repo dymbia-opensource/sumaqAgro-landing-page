@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies | SumaqAgro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+    <style>
+        .legal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #f3f4f6;
+            margin-bottom: 40px;
+        }
+        .legal-header__actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .legal-header .brand img { height: 48px; width: auto; }
+        .legal-header .btn-home {
+            background-color: #23714b;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .legal-header .btn-home:hover { background-color: #1b583a; }
+
+        .legal-hero { margin-bottom: 40px; }
+        .legal-hero .eyebrow {
+            color: #23714b;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .legal-hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #111827;
+            margin: 0 0 8px 0;
+        }
+        .legal-hero p { color: #6b7280; font-size: 15px; margin: 0; }
+
+        .legal-cards { display: flex; flex-direction: column; gap: 24px; margin-bottom: 60px; }
+        .legal-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 32px;
+            background: #ffffff;
+            position: relative;
+        }
+        .legal-card::before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 32px;
+            width: 32px;
+            height: 4px;
+            background-color: #23714b;
+            border-radius: 2px;
+        }
+        .legal-card__header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 12px;
+            margin-top: 8px;
+        }
+        .legal-card__icon {
+            background-color: #eaf5ef;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .legal-card__icon img { width: 20px; height: 20px; }
+        .legal-card h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111827;
+            margin: 4px 0 0 0;
+        }
+        .legal-card p, .legal-card ul {
+            color: #4b5563;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+            padding-left: 56px;
+        }
+        .legal-card ul { margin-top: 8px; }
+        .legal-card li { margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="legal-header">
+        <a class="brand" href="index.html">
+            <img src="assets/images/brand-logo.png" alt="SumaqAgro">
+        </a>
+        <div class="legal-header__actions">
+            <button class="language" type="button" aria-label="Idioma actual">
+                <img src="assets/icons/language.svg" alt="" width="28" height="29">
+                <span data-i18n="nav_lang_label">ES</span>
+            </button>
+            <a class="btn-home" href="index.html" data-i18n="legal_btn_home">Home</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="legal-hero">
+            <p class="eyebrow" data-i18n="legal_eyebrow">INFORMACIÓN LEGAL</p>
+            <h1 data-i18n="cookie_title">Política de Cookies</h1>
+            <p data-i18n="cookie_updated">Última actualización: Septiembre de 2026</p>
+        </div>
+
+        <div class="legal-cards">
+            <article class="legal-card">
+                <div class="legal-card__header">
+                    <div class="legal-card__icon">
+                        <img src="assets/icons/solution-icon.svg" alt="">
+                    </div>
+                    <h2 data-i18n="cookie_s1_title">1. ¿Qué son las cookies?</h2>
+                </div>
+                <p data-i18n="cookie_s1_desc">Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo al visitar nuestra plataforma web para garantizar el funcionamiento técnico y la personalización de tu experiencia.</p>
+            </article>
+
+            <article class="legal-card">
+                <div class="legal-card__header">
+                    <div class="legal-card__icon">
+                        <img src="assets/icons/solution-icon.svg" alt="">
+                    </div>
+                    <h2 data-i18n="cookie_s2_title">2. Tipos de cookies que utilizamos</h2>
+                </div>
+                <ul>
+                    <li data-i18n="cookie_s2_item1"><strong>Cookies esenciales:</strong> Necesarias para mantener tu sesión activa y permitir la navegación segura en la aplicación.</li>
+                    <li data-i18n="cookie_s2_item2"><strong>Cookies de preferencias:</strong> Almacenan configuraciones del usuario, como la selección del idioma (ES/EN).</li>
+                    <li data-i18n="cookie_s2_item3"><strong>Cookies analíticas:</strong> Ayudan a entender cómo interactúan los usuarios con la plataforma para mejorar el servicio.</li>
+                </ul>
+            </article>
+
+            <article class="legal-card">
+                <div class="legal-card__header">
+                    <div class="legal-card__icon">
+                        <img src="assets/icons/solution-icon.svg" alt="">
+                    </div>
+                    <h2 data-i18n="cookie_s3_title">3. Cómo gestionar las cookies</h2>
+                </div>
+                <p data-i18n="cookie_s3_desc">Puedes modificar o desactivar las cookies directamente desde la configuración de tu navegador web en cualquier momento.</p>
+            </article>
+        </div>
+    </main>
+</div>
+<footer class="site-footer">
+    <div class="container footer__grid">
+        <div class="footer__brand">
+            <img src="assets/images/footer-logo.png" alt="SumaqAgro" width="101" height="93">
+            <p data-i18n="footer_desc">Soluciones agrícolas tecnológicas para una agricultura sostenible y rentable.</p>
+            <div class="social-links" aria-label="Redes sociales">
+                <a href="#" aria-label="X"><img src="assets/images/social-1.png" alt="" width="58" height="53"></a>
+                <a href="#" aria-label="YouTube"><img src="assets/images/social-2.png" alt="" width="58" height="53"></a>
+                <a href="#" aria-label="LinkedIn"><img src="assets/images/social-3.png" alt="" width="58" height="53"></a>
+                <a href="#" aria-label="Instagram"><img src="assets/images/social-4.png" alt="" width="58" height="53"></a>
+                <a href="#" aria-label="Google"><img src="assets/images/social-5.png" alt="" width="58" height="53"></a>
+            </div>
+        </div>
+        <div class="footer__column">
+            <h2 data-i18n="footer_col2_title">Enlaces Rápidos</h2>
+            <a href="index.html#about" data-i18n="footer_col2_l1">Sobre Nosotros</a>
+            <a href="index.html#solutions" data-i18n="footer_col2_l2">Soluciones</a>
+            <a href="index.html#plans" data-i18n="nav_plans">Planes</a>
+            <a href="index.html#impact" data-i18n="nav_impact">Impacto</a>
+        </div>
+    </div>
+    <div class="container footer__bottom">
+        <p>© 2026 SumaqAgro Solutions. Todos los derechos reservados.</p>
+        <div>
+            <a href="index.html" data-i18n="nav_start">Inicio</a>
+            <a href="policy.html" data-i18n="footer_privacy">Política de Privacidad</a>
+            <a href="service.html" data-i18n="footer_terms">Términos de Servicio</a>
+            <a href="cookie.html" data-i18n="footer_cookie">Política de Cookies</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
