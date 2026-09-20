@@ -72,6 +72,8 @@ const i18nDictionary = {
         plans_title: "Elige el plan que se adapte a tus necesidades",
         plans_month: "Mes",
         plans_year: "Anual",
+        plans_year_suffix: "/año",
+        plans_month_suffix: "/mes",
         plans_saving: "Ahorra 2 meses con el plan anual",
         plan1_name: "Plan Semilla",
         plan1_desc: "1 parcela, NDVI básico y registro de jornales.",
@@ -245,6 +247,8 @@ const i18nDictionary = {
         plans_title: "Choose the plan that fits your needs",
         plans_month: "Month",
         plans_year: "Annual",
+        plans_year_suffix: "/year",
+        plans_month_suffix: "/month",
         plans_saving: "Save 2 months with the annual plan",
         plan1_name: "Seed Plan",
         plan1_desc: "1 plot, basic NDVI, and day labor logging.",
@@ -357,7 +361,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function setLanguage(lang) {
     localStorage.setItem('preferredLang', lang);
-
     document.documentElement.lang = lang;
 
     const elements = document.querySelectorAll('[data-i18n]');
@@ -365,6 +368,17 @@ function setLanguage(lang) {
         const key = element.getAttribute('data-i18n');
         if (i18nDictionary && i18nDictionary[lang] && i18nDictionary[lang][key]) {
             element.innerHTML = i18nDictionary[lang][key];
+        }
+    });
+
+    const activeBillingBtn = document.querySelector('.billing__option.is-active');
+    const activeBilling = activeBillingBtn ? activeBillingBtn.getAttribute('data-billing') : 'monthly';
+
+    document.querySelectorAll('.price-period').forEach(el => {
+        if (activeBilling === 'annual') {
+            el.textContent = lang === 'es' ? '/año' : '/year';
+        } else {
+            el.textContent = lang === 'es' ? '/mes' : '/month';
         }
     });
 
@@ -376,7 +390,6 @@ function setLanguage(lang) {
         );
     }
 }
-
 
 const langButton = document.querySelector('.language');
 
@@ -392,8 +405,6 @@ if (langButton) {
     });
 }
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const billingContainer = document.querySelector('.billing');
     if (!billingContainer) return;
@@ -402,14 +413,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const savingBadge = billingContainer.querySelector('.billing__saving');
 
     function switchBilling(selectedBilling) {
-        // Actualizar botones activos
         billingButtons.forEach(btn => {
             const isSelected = btn.getAttribute('data-billing') === selectedBilling;
             btn.classList.toggle('is-active', isSelected);
             btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
         });
 
-        // Actualizar precios y frecuencias
         const priceValues = document.querySelectorAll('.price-val');
         const pricePeriods = document.querySelectorAll('.price-period');
 
@@ -431,7 +440,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 150);
     }
 
-    // Listener para los botones (Mes / Anual)
     billingButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             const mode = btn.getAttribute('data-billing');
@@ -439,7 +447,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Listener para el texto "Ahorra 2 meses..."
     if (savingBadge) {
         savingBadge.addEventListener('click', () => switchBilling('annual'));
         savingBadge.addEventListener('keydown', (e) => {
