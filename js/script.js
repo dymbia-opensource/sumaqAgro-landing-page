@@ -392,3 +392,61 @@ if (langButton) {
     });
 }
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const billingContainer = document.querySelector('.billing');
+    if (!billingContainer) return;
+
+    const billingButtons = billingContainer.querySelectorAll('.billing__option');
+    const savingBadge = billingContainer.querySelector('.billing__saving');
+
+    function switchBilling(selectedBilling) {
+        // Actualizar botones activos
+        billingButtons.forEach(btn => {
+            const isSelected = btn.getAttribute('data-billing') === selectedBilling;
+            btn.classList.toggle('is-active', isSelected);
+            btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+        });
+
+        // Actualizar precios y frecuencias
+        const priceValues = document.querySelectorAll('.price-val');
+        const pricePeriods = document.querySelectorAll('.price-period');
+
+        priceValues.forEach(el => el.classList.add('price-updating'));
+        pricePeriods.forEach(el => el.classList.add('price-updating'));
+
+        setTimeout(() => {
+            priceValues.forEach(el => {
+                const newPrice = el.getAttribute(`data-${selectedBilling}`);
+                if (newPrice) el.textContent = newPrice;
+                el.classList.remove('price-updating');
+            });
+
+            pricePeriods.forEach(el => {
+                const newPeriod = el.getAttribute(`data-${selectedBilling}`);
+                if (newPeriod) el.textContent = newPeriod;
+                el.classList.remove('price-updating');
+            });
+        }, 150);
+    }
+
+    // Listener para los botones (Mes / Anual)
+    billingButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const mode = btn.getAttribute('data-billing');
+            switchBilling(mode);
+        });
+    });
+
+    // Listener para el texto "Ahorra 2 meses..."
+    if (savingBadge) {
+        savingBadge.addEventListener('click', () => switchBilling('annual'));
+        savingBadge.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                switchBilling('annual');
+            }
+        });
+    }
+});
