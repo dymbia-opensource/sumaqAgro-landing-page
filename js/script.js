@@ -406,6 +406,40 @@ if (langButton) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      const navLinks = document.querySelectorAll('.nav-links a');
+
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = navMenu.classList.toggle('is-active');
+        navMenu.classList.toggle('is-open', isOpen);
+        navToggle.classList.toggle('is-active', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.body.classList.toggle('menu-open', isOpen);
+            });
+
+        navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+        navMenu.classList.remove('is-active', 'is-open');
+        navToggle.classList.remove('is-active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+             });
+          });
+
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navMenu.classList.remove('is-active', 'is-open');
+                navToggle.classList.remove('is-active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
+               }
+           });
+        }
+
     const billingContainer = document.querySelector('.billing');
     if (!billingContainer) return;
 

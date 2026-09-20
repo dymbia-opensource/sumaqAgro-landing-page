@@ -1,112 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de Cookies de SumaqAgro.">
     <title>Política de Cookies | SumaqAgro</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
-    <style>
-        .legal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #f3f4f6;
-            margin-bottom: 40px;
-        }
-        .legal-header__actions {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .legal-header .brand img { height: 48px; width: auto; }
-        .legal-header .btn-home {
-            background-color: #23714b;
-            color: white;
-            padding: 10px 24px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: background 0.2s;
-        }
-        .legal-header .btn-home:hover { background-color: #1b583a; }
-
-        .legal-hero { margin-bottom: 40px; }
-        .legal-hero .eyebrow {
-            color: #23714b;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-        .legal-hero h1 {
-            font-size: 42px;
-            font-weight: 800;
-            color: #111827;
-            margin: 0 0 8px 0;
-        }
-        .legal-hero p { color: #6b7280; font-size: 15px; margin: 0; }
-
-        .legal-cards { display: flex; flex-direction: column; gap: 24px; margin-bottom: 60px; }
-        .legal-card {
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 32px;
-            background: #ffffff;
-            position: relative;
-        }
-        .legal-card::before {
-            content: "";
-            position: absolute;
-            top: 12px;
-            left: 32px;
-            width: 32px;
-            height: 4px;
-            background-color: #23714b;
-            border-radius: 2px;
-        }
-        .legal-card__header {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 12px;
-            margin-top: 8px;
-        }
-        .legal-card__icon {
-            background-color: #eaf5ef;
-            padding: 10px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        .legal-card__icon img { width: 20px; height: 20px; }
-        .legal-card h2 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #111827;
-            margin: 4px 0 0 0;
-        }
-        .legal-card p, .legal-card ul {
-            color: #4b5563;
-            font-size: 15px;
-            line-height: 1.6;
-            margin: 0;
-            padding-left: 56px;
-        }
-        .legal-card ul { margin-top: 8px; }
-        .legal-card li { margin-bottom: 6px; }
-    </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Saltar al contenido</a>
+
 <div class="container">
     <header class="legal-header">
-        <a class="brand" href="index.html">
-            <img src="assets/images/brand-logo.png" alt="SumaqAgro">
+        <a class="brand" href="index.html" aria-label="SumaqAgro, inicio">
+            <img src="assets/images/brand-logo.png" alt="SumaqAgro" width="99" height="93">
         </a>
         <div class="legal-header__actions">
             <button class="language" type="button" aria-label="Idioma actual">
@@ -117,9 +25,9 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <div class="legal-hero">
-            <p class="eyebrow" data-i18n="legal_eyebrow">INFORMACIÓN LEGAL</p>
+            <p class="eyebrow" data-i18n="legal_eyebrow">Información Legal</p>
             <h1 data-i18n="cookie_title">Política de Cookies</h1>
             <p data-i18n="cookie_updated">Última actualización: Septiembre de 2026</p>
         </div>
@@ -128,7 +36,7 @@
             <article class="legal-card">
                 <div class="legal-card__header">
                     <div class="legal-card__icon">
-                        <img src="assets/icons/solution-icon.svg" alt="">
+                        <img src="assets/icons/solution-icon.svg" alt="" width="20" height="20">
                     </div>
                     <h2 data-i18n="cookie_s1_title">1. ¿Qué son las cookies?</h2>
                 </div>
@@ -138,7 +46,7 @@
             <article class="legal-card">
                 <div class="legal-card__header">
                     <div class="legal-card__icon">
-                        <img src="assets/icons/solution-icon.svg" alt="">
+                        <img src="assets/icons/solution-icon.svg" alt="" width="20" height="20">
                     </div>
                     <h2 data-i18n="cookie_s2_title">2. Tipos de cookies que utilizamos</h2>
                 </div>
@@ -152,7 +60,7 @@
             <article class="legal-card">
                 <div class="legal-card__header">
                     <div class="legal-card__icon">
-                        <img src="assets/icons/solution-icon.svg" alt="">
+                        <img src="assets/icons/solution-icon.svg" alt="" width="20" height="20">
                     </div>
                     <h2 data-i18n="cookie_s3_title">3. Cómo gestionar las cookies</h2>
                 </div>
@@ -161,6 +69,7 @@
         </div>
     </main>
 </div>
+
 <footer class="site-footer">
     <div class="container footer__grid">
         <div class="footer__brand">
