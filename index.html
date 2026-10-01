@@ -223,23 +223,23 @@
         </div>
     </section>
 
-
     <section class="demo" id="demo" aria-labelledby="demo-title">
         <div class="demo__overlay" aria-hidden="true"></div>
         <div class="container demo__content">
-            <p class="eyebrow eyebrow--light" data-i18n="demo_eyebrow">Demo del producto</p>
-            <h2 class="section-title" id="demo-title" data-i18n="demo_title">Conoce SumaqAgro en acción</h2>
-            <p class="demo__subtitle" data-i18n="demo_subtitle">Video demostrativo</p>
-
-            <div class="demo-player" role="group" aria-label="Reproductor del video demostrativo">
+            <p class="eyebrow eyebrow--light" data-i18n="demo_eyebrow">PRODUCT DEMO</p>
+            <h2 class="section-title" id="demo-title" data-i18n="demo_title">See SumaqAgro in action</h2>
+            <p class="demo__subtitle" data-i18n="demo_subtitle">Demonstration Video</p>
+            <div class="demo-player" role="group" aria-label="Demonstration video player">
                 <div class="demo-player__visual">
-                    <span class="demo-player__label" data-i18n="demo_label">Tecnología aplicada al campo</span>
-                    <button class="demo-player__play" type="button" aria-label="Reproducir video demostrativo" aria-describedby="demo-status">
+                    <span class="demo-player__label" data-i18n="demo_label">Technology applied to fields</span>
+                    <button class="demo-player__play" type="button" aria-label="Play demonstration video" aria-describedby="demo-status">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M8.5 6.2v11.6L18 12 8.5 6.2Z"/>
+                            <path d="M8.5 6.2v11.6L18 12 8.5 6.2Z" />
                         </svg>
                     </button>
-                    <p class="demo-player__status" id="demo-status" aria-live="polite" data-i18n="demo_status">Reproduce una vista general de SumaqAgro</p>
+                    <p class="demo-player__status" id="demo-status" aria-live="polite" data-i18n="demo_status">
+                        Play an overview video of SumaqAgro
+                    </p>
                 </div>
             </div>
         </div>
@@ -248,57 +248,74 @@
     <section class="section pricing" id="plans" aria-labelledby="pricing-title">
         <div class="container">
             <div class="pricing__heading">
-                <p class="eyebrow" data-i18n="plans_eyebrow">Planes</p>
-                <h2 class="section-title" id="pricing-title" data-i18n="plans_title">Elige el plan que se adapte a tus necesidades</h2>
+                <p class="eyebrow" data-i18n="plans_eyebrow">PLANS</p>
+                <h2 class="section-title" id="pricing-title" data-i18n="plans_title">
+                    Choose the plan that fits your needs
+                </h2>
             </div>
-
             <div class="billing-wrapper">
-                <div class="billing" role="group" aria-label="Periodo de facturación">
-                    <button class="billing__option is-active" type="button" data-billing="monthly" aria-pressed="true" data-i18n="plans_month">Mes</button>
-                    <button class="billing__option" type="button" data-billing="annual" aria-pressed="false" data-i18n="plans_year">Anual</button>
-                    <span class="billing__saving" data-billing="annual" role="button" tabindex="0" data-i18n="plans_saving">Ahorra 2 meses con el plan anual</span>
+                <div class="billing" role="group" aria-label="Billing period">
+                    <button class="billing__option is-active" type="button" data-billing="monthly"
+                            aria-pressed="true" data-i18n="plans_month">Month</button>
+
+                    <button class="billing__option" type="button" data-billing="annual"
+                            aria-pressed="false" data-i18n="plans_year">Annual</button>
+
+                    <span class="billing__saving" data-billing="annual" role="button" tabindex="0"
+                          data-i18n="plans_saving">Save 2 months with the annual plan</span>
                 </div>
             </div>
-
             <div class="pricing__grid">
                 <article class="pricing-card">
                     <div class="pricing-card__header">
-                        <h3 data-i18n="plan1_name">Plan Semilla</h3>
+                        <h3 data-i18n="plan1_name">Seed Plan</h3>
                     </div>
                     <p class="pricing-card__price">
                         <strong class="price-val" data-monthly="S/0" data-annual="S/0">S/0</strong>
                     </p>
-                    <p class="pricing-card__description" data-i18n="plan1_desc">1 parcela, NDVI básico y registro de jornales.</p>
-                    <a class="button pricing-card__button" href="/app/register" data-i18n="plan1_btn">Empezar gratis</a>
+                    <p class="pricing-card__description" data-i18n="plan1_desc">
+                        1 plot, basic NDVI, and day labor logging.
+                    </p>
+                    <a class="button pricing-card__button" href="/app/register" data-i18n="plan1_btn">
+                        Start for free
+                    </a>
                 </article>
-
                 <article class="pricing-card pricing-card--featured">
                     <div class="pricing-card__header">
-                        <h3 data-i18n="plan2_name">Cooperativa Pro</h3>
-                        <span class="badge" data-i18n="plan2_badge">Más popular</span>
+                        <h3 data-i18n="plan2_name">Cooperative Pro</h3>
+                        <span class="badge" data-i18n="plan2_badge">Most popular</span>
                     </div>
                     <p class="pricing-card__price">
                         <strong class="price-val" data-monthly="S/189" data-annual="S/1,890">S/189</strong>
-                        <small class="price-period" data-monthly="/mes" data-annual="/año" data-i18n="plans_month_suffix">/mes</small>
+                        <small class="price-period" data-monthly="/month" data-annual="/year"
+                               data-i18n="plans_month_suffix">/month</small>
                     </p>
-                    <p class="pricing-card__description" data-i18n="plan2_desc">50 productores, certificación de calibres y raza, exportación de reportes.</p>
-                    <a class="button pricing-card__button pricing-card__button--primary" href="/app/register" data-i18n="plan2_btn">Suscribir cooperativa</a>
+                    <p class="pricing-card__description" data-i18n="plan2_desc">
+                        50 farmers, size and variety certification, report export.
+                    </p>
+                    <a class="button pricing-card__button pricing-card__button--primary"
+                       href="/app/register" data-i18n="plan2_btn">Subscribe cooperative</a>
                 </article>
-
                 <article class="pricing-card">
                     <div class="pricing-card__header">
-                        <h3 data-i18n="plan3_name">Plan Asesor Técnico</h3>
+                        <h3 data-i18n="plan3_name">Technical Advisor Plan</h3>
                     </div>
                     <p class="pricing-card__price">
                         <strong class="price-val" data-monthly="S/89" data-annual="S/890">S/89</strong>
-                        <small class="price-period" data-monthly="/mes" data-annual="/año" data-i18n="plans_month_suffix">/mes</small>
+                        <small class="price-period" data-monthly="/month" data-annual="/year"
+                               data-i18n="plans_month_suffix">/month</small>
                     </p>
-                    <p class="pricing-card__description" data-i18n="plan3_desc">20 fundos supervisados, recetas técnicas y NDVI avanzado.</p>
-                    <a class="button pricing-card__button" href="/app/register" data-i18n="plan3_btn">Prueba de 14 días</a>
+                    <p class="pricing-card__description" data-i18n="plan3_desc">
+                        20 supervised farms, technical recipes, and advanced NDVI.
+                    </p>
+                    <a class="button pricing-card__button" href="/app/register" data-i18n="plan3_btn">
+                        14-day free trial
+                    </a>
                 </article>
             </div>
         </div>
     </section>
+
 
     <section class="section impact" id="impact" aria-labelledby="impact-title">
         <div class="container">
