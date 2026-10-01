@@ -390,18 +390,12 @@ function setLanguage(lang) {
     }
 }
 
-const langButton = document.querySelector('.language');
+function initApp() {
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    setLanguage(savedLang);
 
-if (langButton) {
-    langButton.addEventListener('click', () => {
-        const currentLang =
-            localStorage.getItem('preferredLang') || 'en';
-
-        const newLang =
-            currentLang === 'es' ? 'en' : 'es';
-
-        setLanguage(newLang);
-    });
+    initNavigation();
+    initBilling();
 }
 
 function initNavigation() {
