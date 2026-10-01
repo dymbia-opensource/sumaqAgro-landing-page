@@ -352,27 +352,24 @@ const i18nDictionary = {
     }
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLang') || 'es';
-    setLanguage(savedLang);
-});
-
-
 function setLanguage(lang) {
     localStorage.setItem('preferredLang', lang);
     document.documentElement.lang = lang;
 
     const elements = document.querySelectorAll('[data-i18n]');
+
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
+
         if (i18nDictionary && i18nDictionary[lang] && i18nDictionary[lang][key]) {
             element.innerHTML = i18nDictionary[lang][key];
         }
     });
 
     const activeBillingBtn = document.querySelector('.billing__option.is-active');
-    const activeBilling = activeBillingBtn ? activeBillingBtn.getAttribute('data-billing') : 'monthly';
+    const activeBilling = activeBillingBtn
+        ? activeBillingBtn.getAttribute('data-billing')
+        : 'monthly';
 
     document.querySelectorAll('.price-period').forEach(el => {
         if (activeBilling === 'annual') {
@@ -382,11 +379,13 @@ function setLanguage(lang) {
         }
     });
 
-    const langButton = document.querySelector('.language');
+    const langButton = document.querySelector('.language')
     if (langButton) {
         langButton.setAttribute(
             'aria-label',
-            lang === 'es' ? 'Idioma actual: español' : 'Current language: English'
+            lang === 'es'
+                ? 'Idioma actual: español'
+                : 'Current language: English'
         );
     }
 }
