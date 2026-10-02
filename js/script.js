@@ -390,12 +390,24 @@ function setLanguage(lang) {
     }
 }
 
+function initLanguageToggle() {
+    const langButtons = document.querySelectorAll('.language');
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const currentLang = localStorage.getItem('preferredLang') || 'en';
+            const newLang = currentLang === 'es' ? 'en' : 'es';
+            setLanguage(newLang);
+        });
+    });
+}
+
 function initApp() {
     const savedLang = localStorage.getItem('preferredLang') || 'en';
     setLanguage(savedLang);
 
     initNavigation();
     initBilling();
+    initLanguageToggle();
 }
 
 function initNavigation() {
