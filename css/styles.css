@@ -327,8 +327,8 @@ a, button {
 }
 
 .language img {
-    width: 20px;
-    height: 21px;
+    width: 35px;
+    height: 35px;
 }
 
 .nav-toggle {
@@ -564,8 +564,8 @@ a, button {
 }
 
 .audience-card__icon img {
-    width: 25px;
-    height: 25px;
+    width: 37px;
+    height: 37px;
 }
 
 .tag {
@@ -730,7 +730,6 @@ a, button {
     background: var(--color-primary);
 }
 
-/* 10. Demo */
 .demo {
     min-height: 720px;
     position: relative;
