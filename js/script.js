@@ -379,15 +379,15 @@ function setLanguage(lang) {
         }
     });
 
-    const langButton = document.querySelector('.language')
-    if (langButton) {
+    const langButtons = document.querySelectorAll('.language');
+    langButtons.forEach(langButton => {
         langButton.setAttribute(
             'aria-label',
             lang === 'es'
                 ? 'Idioma actual: español'
                 : 'Current language: English'
         );
-    }
+    });
 }
 
 function initLanguageToggle() {
