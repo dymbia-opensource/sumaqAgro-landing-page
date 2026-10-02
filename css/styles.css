@@ -372,8 +372,13 @@ a, button {
     text-align: left;
 }
 
+.hero .eyebrow {
+    color: var(--color-primary-light);
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+}
+
 .hero__content::before {
-    content: 'Agricultura inteligente para un mejor mañana';
     display: block;
     margin-bottom: 18px;
     color: #a7efb9;
