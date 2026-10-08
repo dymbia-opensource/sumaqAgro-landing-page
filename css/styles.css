@@ -58,56 +58,56 @@ button {
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-200.ttf') format('truetype');
+    src: url('../public/assets/fonts/inter-200.ttf') format('truetype');
     font-weight: 200;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-300.ttf') format('truetype');
+    src: url('../public/assets/fonts/inter-300.ttf') format('truetype');
     font-weight: 300;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-400.ttf') format('truetype');
+    src: url('../public/assets/fonts/inter-400.ttf') format('truetype');
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-500.ttf') format('truetype');
+    src: url('../public/assets/fonts/inter-500.ttf') format('truetype');
     font-weight: 500;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-600.ttf') format('truetype');
+    src: url('../public/assets/fonts/inter-600.ttf') format('truetype');
     font-weight: 600;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-700.ttf') format('truetype');
+    src: url('../public/assets/fonts/inter-700.ttf') format('truetype');
     font-weight: 700;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-800.ttf') format('truetype');
+    src: url('../public/assets/fonts/inter-800.ttf') format('truetype');
     font-weight: 800;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-900.ttf') format('truetype');
+    src: url('../public/assets/fonts/inter-900.ttf') format('truetype');
     font-weight: 900;
     font-display: swap;
 }
@@ -356,7 +356,7 @@ a, button {
     display: flex;
     align-items: center;
     color: #fff;
-    background: url('../assets/images/hero-background.png') center 56% / cover no-repeat;
+    background: url('../public/assets/images/hero-background.png') center 56% / cover no-repeat;
 }
 
 .hero__overlay {
@@ -738,7 +738,7 @@ a, button {
     padding: 96px 0;
     overflow: hidden;
     color: #fff;
-    background: url('../assets/images/eart-fondo.avif') center / cover no-repeat;
+    background: url('../public/assets/images/eart-fondo.avif') center / cover no-repeat;
 }
 
 .demo__overlay {
@@ -1071,7 +1071,7 @@ a, button {
     width: 34px;
     height: 34px;
     margin-bottom: 14px;
-    background: #e9f6e8 url('../assets/icons/metric.svg') center / 18px no-repeat;
+    background: #e9f6e8 url('../public/assets/icons/metric.svg') center / 18px no-repeat;
     border-radius: 10px;
 }
 
