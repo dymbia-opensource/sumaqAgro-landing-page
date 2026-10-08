@@ -747,6 +747,14 @@ a, button {
     background: linear-gradient(rgba(6, 38, 25, .93), rgb(49 34 16 / 0.79) 52%, rgb(30 16 4 / 0.9));
 }
 
+.demo--about-team {
+    background: url('../images/hero-background.png') center 42% / cover no-repeat;
+}
+
+.demo--about-team .demo__overlay {
+    background: linear-gradient(135deg, rgba(10, 36, 24, 0.94) 0%, rgba(24, 76, 50, 0.86) 50%, rgba(8, 26, 18, 0.95) 100%);
+}
+
 .demo__content {
     position: relative;
     z-index: 1;

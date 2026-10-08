@@ -29,7 +29,17 @@ window.i18nDictionary.en = {
     team_member3: "Vargas Enriquez, Jose Carlos",
     team_member4: "Sanca Condori, Miguel",
     team_member5: "Duarte Ruffner, Drago Derick",
-    team_role: "Role / Specialty",
+    team_role1: "Domain Analyst / Requirements Lead",
+    team_role2: "Team Leader / Scrum Master",
+    team_role3: "UX/UI Designer / Product Designer",
+    team_role4: "Software Architect",
+    team_role5: "Product Owner",
+
+    about_team_video_eyebrow: "VIDEO ABOUT THE TEAM",
+    about_team_video_title: "Video About the Team",
+    about_team_video_subtitle: "Introduction to the team, roles, and responsibilities assumed during the development of SumaqAgro.",
+    about_team_video_label: "Technology applied to fields",
+    about_team_video_status: "Play an overview video of the SumaqAgro team",
 
     audience_eyebrow: "OUR COMMUNITY",
     audience_title: "Who do we help?",

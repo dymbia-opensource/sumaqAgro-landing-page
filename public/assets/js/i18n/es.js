@@ -29,7 +29,17 @@ window.i18nDictionary.es = {
     team_member3: "Vargas Enriquez, Jose Carlos",
     team_member4: "Sanca Condori, Miguel",
     team_member5: "Duarte Ruffner, Drago Derick",
-    team_role: "Rol / especialidad",
+    team_role1: "Analista de Dominio / Líder de Requerimientos",
+    team_role2: "Líder de Equipo / Scrum Master",
+    team_role3: "Diseñador UX/UI / Diseñador de Producto",
+    team_role4: "Arquitecto de Software",
+    team_role5: "Product Owner",
+
+    about_team_video_eyebrow: "VIDEO SOBRE EL EQUIPO",
+    about_team_video_title: "Video sobre el equipo",
+    about_team_video_subtitle: "Introducción al equipo, roles y responsabilidades asumidas durante el desarrollo de SumaqAgro.",
+    about_team_video_label: "Tecnología aplicada al campo",
+    about_team_video_status: "Reproducir el video de presentación del equipo SumaqAgro",
 
     audience_eyebrow: "NUESTRA COMUNIDAD",
     audience_title: "¿A quién ayudamos?",
