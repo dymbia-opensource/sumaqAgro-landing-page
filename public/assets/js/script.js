@@ -1,16 +1,15 @@
-const i18nDictionary = window.i18nDictionary || {};
-
 function setLanguage(lang) {
     localStorage.setItem('preferredLang', lang);
     document.documentElement.lang = lang;
 
+    const dict = window.i18nDictionary || {};
     const elements = document.querySelectorAll('[data-i18n]');
 
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
 
-        if (i18nDictionary && i18nDictionary[lang] && i18nDictionary[lang][key]) {
-            element.innerHTML = i18nDictionary[lang][key];
+        if (dict && dict[lang] && dict[lang][key]) {
+            element.innerHTML = dict[lang][key];
         }
     });
 

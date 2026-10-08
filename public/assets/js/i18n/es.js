@@ -1,3 +1,5 @@
+window.i18nDictionary = window.i18nDictionary || {};
+
 window.i18nDictionary.es = {
     hero_eyebrow: "AGRICULTURA INTELIGENTE PARA UN MEJOR MAÑANA",
     hero_title: 'Cultiva con Información.<br><span>Decide con Precisión</span>',
