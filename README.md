@@ -57,15 +57,11 @@ Este landing page es la **puerta de entrada comercial** de SumaqAgro: comunica l
 | Footer | — | Enlaces rápidos, soporte y páginas legales |
 
 ### Páginas Legales
-- [`policy.html`](policy.html) — Política de Privacidad
-- [`service.html`](service.html) — Términos de Servicio
-- [`cookie.html`](cookie.html) — Política de Cookies
 
 ---
 
 ## Características Técnicas
 
-- **Bilingüe ES/EN:** traducción dinámica mediante atributos `data-i18n` y un diccionario en `js/script.js`; la preferencia se guarda en `localStorage`.
 - **Selector de facturación:** alterna precios mensual/anual y sincroniza el periodo (`/mes` · `/año`) con el idioma activo.
 - **Responsive Design:** media queries y menú móvil (hamburguesa) para móvil, tablet y escritorio.
 - **SEO y Open Graph:** meta tags, título descriptivo y propiedades `og:*` en el `<head>`.
@@ -79,8 +75,6 @@ Este landing page es la **puerta de entrada comercial** de SumaqAgro: comunica l
 | Capa | Tecnología |
 |---|---|
 | Marcado | HTML5 semántico |
-| Estilos | CSS3 (`css/styles.css`) |
-| Lógica | JavaScript vanilla (`js/script.js`) |
 | Tipografía | Inter (200–900), autoalojada |
 | Iconografía | SVG |
 | Gestión de proyecto | Jira, Miro, GitHub |
@@ -95,7 +89,6 @@ No requiere compilación ni instalación de dependencias.
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/dymbia-opensource/sumaqAgro-landing-page.git
 cd sumaqAgro-landing-page
 
 # 2. Abrir directamente index.html en el navegador, o servirlo localmente:
@@ -103,30 +96,15 @@ python3 -m http.server 8080
 # → http://localhost:8080
 ```
 
----
-
 ## Estructura de Directorios
 
 ```text
 sumaqAgro-landing-page/
-├── assets/
-│   ├── fonts/                # Inter (200–900) en .ttf
-│   ├── icons/                # Iconos SVG (flechas, métricas, soluciones, etc.)
-│   └── images/               # Logos, hero, equipo, audiencias y testimonios
-├── css/
-│   └── styles.css            # Estilos globales y media queries responsive
-├── js/
-│   └── script.js             # Diccionario i18n, cambio de idioma, menú móvil, billing toggle, demo
 ├── index.html                # Página principal
-├── policy.html               # Política de Privacidad
-├── service.html              # Términos de Servicio
-├── cookie.html               # Política de Cookies
 ├── package.json
 ├── .gitignore
 └── README.md
 ```
-
----
 
 ## Equipo de Desarrollo
 

@@ -58,56 +58,56 @@ button {
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-200.ttf') format('truetype');
+    src: url('../fonts/inter-200.ttf') format('truetype');
     font-weight: 200;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-300.ttf') format('truetype');
+    src: url('../fonts/inter-300.ttf') format('truetype');
     font-weight: 300;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-400.ttf') format('truetype');
+    src: url('../fonts/inter-400.ttf') format('truetype');
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-500.ttf') format('truetype');
+    src: url('../fonts/inter-500.ttf') format('truetype');
     font-weight: 500;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-600.ttf') format('truetype');
+    src: url('../fonts/inter-600.ttf') format('truetype');
     font-weight: 600;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-700.ttf') format('truetype');
+    src: url('../fonts/inter-700.ttf') format('truetype');
     font-weight: 700;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-800.ttf') format('truetype');
+    src: url('../fonts/inter-800.ttf') format('truetype');
     font-weight: 800;
     font-display: swap;
 }
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter-900.ttf') format('truetype');
+    src: url('../fonts/inter-900.ttf') format('truetype');
     font-weight: 900;
     font-display: swap;
 }
@@ -327,8 +327,8 @@ a, button {
 }
 
 .language img {
-    width: 20px;
-    height: 21px;
+    width: 35px;
+    height: 35px;
 }
 
 .nav-toggle {
@@ -356,7 +356,7 @@ a, button {
     display: flex;
     align-items: center;
     color: #fff;
-    background: url('../assets/images/hero-background.png') center 56% / cover no-repeat;
+    background: url('../images/hero-background.png') center 56% / cover no-repeat;
 }
 
 .hero__overlay {
@@ -372,8 +372,13 @@ a, button {
     text-align: left;
 }
 
+.hero .eyebrow {
+    color: var(--color-primary-light);
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+}
+
 .hero__content::before {
-    content: 'Agricultura inteligente para un mejor mañana';
     display: block;
     margin-bottom: 18px;
     color: #a7efb9;
@@ -559,8 +564,8 @@ a, button {
 }
 
 .audience-card__icon img {
-    width: 25px;
-    height: 25px;
+    width: 37px;
+    height: 37px;
 }
 
 .tag {
@@ -725,7 +730,6 @@ a, button {
     background: var(--color-primary);
 }
 
-/* 10. Demo */
 .demo {
     min-height: 720px;
     position: relative;
@@ -734,13 +738,21 @@ a, button {
     padding: 96px 0;
     overflow: hidden;
     color: #fff;
-    background: url('../assets/images/eart-fondo.avif') center / cover no-repeat;
+    background: url('../images/eart-fondo.avif') center / cover no-repeat;
 }
 
 .demo__overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(rgba(6, 38, 25, .93), rgb(49 34 16 / 0.79) 52%, rgb(30 16 4 / 0.9));
+}
+
+.demo--about-team {
+    background: url('../images/hero-background.png') center 42% / cover no-repeat;
+}
+
+.demo--about-team .demo__overlay {
+    background: linear-gradient(135deg, rgba(10, 36, 24, 0.94) 0%, rgba(24, 76, 50, 0.86) 50%, rgba(8, 26, 18, 0.95) 100%);
 }
 
 .demo__content {
@@ -807,6 +819,15 @@ a, button {
     left: -80px;
     background: rgba(22, 76, 52, .19);
     transform: rotate(10deg);
+}
+
+.demo-player__iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    z-index: 2;
 }
 
 .demo-player__label {
@@ -1063,12 +1084,24 @@ a, button {
 }
 
 .impact-card::before {
-    content: '';
-    width: 34px;
-    height: 34px;
+    display: none;
+}
+
+.impact-card__icon {
+    width: 38px;
+    height: 38px;
     margin-bottom: 14px;
-    background: #e9f6e8 url('../assets/icons/metric.svg') center / 18px no-repeat;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #e9f6e8;
     border-radius: 10px;
+}
+
+.impact-card__icon .material-symbols-outlined {
+    font-size: 22px;
+    color: var(--color-primary);
+    font-weight: 600;
 }
 
 .impact-card h3 {
@@ -1084,7 +1117,7 @@ a, button {
     line-height: 1;
 }
 
-.impact-card span {
+.impact-card > span:last-child {
     width: 52px;
     height: 5px;
     margin-top: 17px;
@@ -1135,11 +1168,13 @@ a, button {
 .stars {
     display: flex;
     align-items: center;
+    gap: 3px;
 }
 
-.stars img {
-    width: 25px;
-    height: 26px;
+.stars .star-icon {
+    font-size: 24px;
+    color: #f59e0b;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
 .testimonial-card blockquote {
@@ -2367,6 +2402,11 @@ main {
     height: 20px;
 }
 
+.legal-card__icon .material-symbols-outlined {
+    font-size: 24px;
+    color: var(--color-primary, #23714b);
+}
+
 .legal-card h2 {
     font-size: 18px;
     font-weight: 700;
@@ -2400,4 +2440,49 @@ main {
     margin-top: 48px;
     grid-template-columns: 1fr;
     gap: 24px;
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+}
+
+.audience-card__icon .material-symbols-outlined {
+    font-size: 26px;
+    color: var(--color-primary);
+}
+
+.solution-card__icon .material-symbols-outlined {
+    font-size: 26px;
+    color: var(--color-primary);
+}
+
+.solution-card__result .material-symbols-outlined {
+    font-size: 18px;
+    color: #fff;
+    background: var(--color-primary);
+    border-radius: 4px;
+    padding: 3px;
+    flex-shrink: 0;
+}
+
+.impact-card strong .material-symbols-outlined {
+    font-size: 0.8em;
+    vertical-align: middle;
+    color: var(--color-primary);
 }
