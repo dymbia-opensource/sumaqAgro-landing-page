@@ -48,3 +48,18 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
     - Favicon reference and viewport configuration.
     - Semantic HTML sections, descriptive image alternative text, and skip-to-content navigation.
     - Accessible labels for navigation and interactive controls.
+
+### Removed
+- Obsolete image assets during landing page asset cleanup.
+
+### Fixed
+- Landing page title, meta description, and keyword content.
+- Header, hero, and About Us text content.
+- Team section content and positioning.
+- Text content across audience, solutions, demo, and pricing sections.
+- Impact, testimonials, and call-to-action text.
+- Language switcher logic and billing period labels.
+- Monthly and annual billing toggle behavior and period display.
+- Internationalization logic and translated content for legal pages.
+- Asset structure and internationalization paths after directory reorganization.
+
