@@ -67,24 +67,6 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   - Semantic HTML sections, descriptive image alternative text, and skip-to-content navigation.
   - Accessible labels for navigation and interactive controls.
 
-## [2.0.0] - 2026-10-09
-
-### Added
-
-- **About the Team**:
-  - Dedicated team video section with descriptive content and internationalization support.
-- **Internationalization**:
-  - Modular English and Spanish translation dictionaries.
-  - Spanish translations for legal pages.
-  - Support for multiple language toggle buttons.
-- **Application Initialization**:
-  - Modular `initApp` function for initializing navigation, pricing, and language selection.
-- **Legal Page Assets**:
-  - Icons for policy and service pages.
-- **Project Documentation**:
-  - Landing page documentation in `README.md`.
-  - `CHANGELOG.md` and `LICENSE.md`.
-  
 ### Changed
 
 - **Project Structure**: Reorganized assets and legal pages under `public/assets/` and `public/sections/`.
