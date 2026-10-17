@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.0] - 2026-10-10
+
+### Added
+
+- **Immersive hero**: illustrated Andean landscape in SVG layers (sunrise, satellite scanning the fields, snow-capped peaks, terraces with coffee shrubs and a farmer using the app) with scroll and pointer parallax.
+- **Glass pill navigation** over the hero (active section highlighted, EN/ES pill, dark CTA) that turns solid after scrolling.
+- **Platform showcase** with an infinite marquee and the dashboard screenshot.
+- **Conversion-oriented structure**: new sections *The challenge* (with official sources), *How it works*, *FAQ* and a final plan finder that recommends a plan by profile.
+- **Solutions filter** by profile (farmer, cooperative, advisor) — US-06.
+- **Testimonials carousel** with keyboard and arrow navigation — US-08.
+- **Lazy demo video** that loads YouTube only after pressing play — US-05.
+- **Legal policies in a modal dialog** with fallback to the full page — US-09.
+- **GitHub links** on team cards — US-04.
+- Real screenshots of the SumaqAgro web app in the hero and *How it works*.
+- `404.html`, canonical URL, absolute Open Graph image and JSON-LD `SoftwareApplication` data.
+- `data-i18n-attr` support to translate `alt` and `aria-label` attributes; browser language detection.
+
+### Changed
+
+- Visual identity aligned with the Style Guidelines: teal/green palette, Poppins headings, Inter body text and 8 px spacing.
+- Plans now list features, show the monthly equivalent for annual billing and link to the web app with the selected plan.
+- Impact section shows Lean UX goals instead of market statistics, which moved to *The challenge*.
+- Footer links now point to SumaqAgro modules instead of placeholder products.
+- Legal pages redesigned; Cookie Policy describes what the website actually stores.
+
+### Removed
+
+- Unused images, social PNG icons and Inter weights 200, 300, 800 and 900; images converted to WebP (~5 MB → ~620 KB).
+
 ## [2.0.0] - 2026-10-09
 
 ### Added
