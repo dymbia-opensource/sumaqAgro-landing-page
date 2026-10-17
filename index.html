@@ -425,52 +425,79 @@
                 <header class="section-heading">
                     <p class="eyebrow" data-i18n="audience_eyebrow">Our community</p>
                     <h2 class="section-title" id="audience-title" data-i18n="audience_title">Who do we help?</h2>
-                    <p class="section-lead" data-i18n="audience_desc">We work with those who make the country's food security possible. Find your profile.</p>
+                    <p class="section-lead" data-i18n="audience_desc">Three ways of working the land. One shared connection to its future.</p>
                 </header>
 
-                <div class="audience__grid">
-                    <article class="audience-card reveal">
-                        <img src="public/assets/images/audience-farmer.webp" alt="" width="739" height="415" loading="lazy">
-                        <div class="audience-card__body">
-                            <span class="tag" data-i18n="audience_tag1">Family farming</span>
-                            <h3 data-i18n="audience_card1_title">Independent farmers</h3>
-                            <ul class="check-list">
-                                <li data-i18n="audience_card1_b1">Manage up to 4 plots and their crop seasons</li>
-                                <li data-i18n="audience_card1_b2">Know your production cost per sack or quintal</li>
-                                <li data-i18n="audience_card1_b3">View NDVI and NDWI indices and agroclimatic alerts</li>
-                            </ul>
-                            <p class="audience-card__plan" data-i18n="audience_card1_plan">Recommended: <strong>Seed Plan</strong></p>
-                            <a class="button button--primary button--block" href="mailto:contacto@sumaqagro.pe?subject=SumaqAgro%20plan%20inquiry&amp;body=I%20am%20interested%20in%20the%20Seed%20Plan%20from%20SumaqAgro%2C%20monthly%20billing%2C%20at%20S%2F49%20per%20month." data-plan-contact="seed" data-i18n="audience_card1_btn">Choose Seed Plan</a>
-                        </div>
-                    </article>
-                    <article class="audience-card reveal">
-                        <img src="public/assets/images/audience-cooperative.webp" alt="" width="768" height="399" loading="lazy">
-                        <div class="audience-card__body">
-                            <span class="tag" data-i18n="audience_tag2">Agricultural organizations</span>
-                            <h3 data-i18n="audience_card2_title">Cooperative leaders</h3>
-                            <ul class="check-list">
-                                <li data-i18n="audience_card2_b1">Coordinate up to 50 producers and 50 plots in total</li>
-                                <li data-i18n="audience_card2_b2">Evaluate potato and coffee harvest lots</li>
-                                <li data-i18n="audience_card2_b3">Issue and view QR quality certificates</li>
-                            </ul>
-                            <p class="audience-card__plan" data-i18n="audience_card2_plan">Recommended: <strong>Cooperative Pro</strong></p>
-                            <a class="button button--primary button--block" href="mailto:contacto@sumaqagro.pe?subject=SumaqAgro%20plan%20inquiry&amp;body=I%20am%20interested%20in%20the%20Cooperative%20Pro%20from%20SumaqAgro%2C%20monthly%20billing%2C%20at%20S%2F189%20per%20month." data-plan-contact="cooperative" data-i18n="audience_card2_btn">Choose Cooperative Pro</a>
-                        </div>
-                    </article>
-                    <article class="audience-card reveal">
-                        <img src="public/assets/images/audience-advisor.webp" alt="" width="800" height="538" loading="lazy">
-                        <div class="audience-card__body">
-                            <span class="tag" data-i18n="audience_tag3">Technical assistance</span>
-                            <h3 data-i18n="audience_card3_title">Technical advisors &amp; agronomists</h3>
-                            <ul class="check-list">
-                                <li data-i18n="audience_card3_b1">Supervise up to 20 assigned plots belonging to the producers you advise</li>
-                                <li data-i18n="audience_card3_b2">View pest and disease reports</li>
-                                <li data-i18n="audience_card3_b3">Schedule inspections and issue agronomic prescriptions</li>
-                            </ul>
-                            <p class="audience-card__plan" data-i18n="audience_card3_plan">Recommended: <strong>Technical Advisor Plan</strong></p>
-                            <a class="button button--primary button--block" href="mailto:contacto@sumaqagro.pe?subject=SumaqAgro%20plan%20inquiry&amp;body=I%20am%20interested%20in%20the%20Technical%20Advisor%20Plan%20from%20SumaqAgro%2C%20monthly%20billing%2C%20at%20S%2F89%20per%20month." data-plan-contact="advisor" data-i18n="audience_card3_btn">Choose Technical Advisor Plan</a>
-                        </div>
-                    </article>
+                <div class="audience-gallery" data-audience-gallery>
+                    <div class="audience-tabs" role="tablist" aria-label="Our community" data-i18n-attr="aria-label:audience_eyebrow">
+                        <button class="audience-tab is-active" id="audience-tab-1" type="button" role="tab" aria-selected="true" aria-controls="audience-panel-1" tabindex="0" data-audience-tab="0">
+                            <span class="audience-tab__index" aria-hidden="true">01</span>
+                            <span data-i18n="audience_tab1">Independent farmers</span>
+                            <span class="audience-tab__progress" aria-hidden="true"></span>
+                        </button>
+                        <button class="audience-tab" id="audience-tab-2" type="button" role="tab" aria-selected="false" aria-controls="audience-panel-2" tabindex="-1" data-audience-tab="1">
+                            <span class="audience-tab__index" aria-hidden="true">02</span>
+                            <span data-i18n="audience_tab2">Cooperatives & associations</span>
+                            <span class="audience-tab__progress" aria-hidden="true"></span>
+                        </button>
+                        <button class="audience-tab" id="audience-tab-3" type="button" role="tab" aria-selected="false" aria-controls="audience-panel-3" tabindex="-1" data-audience-tab="2">
+                            <span class="audience-tab__index" aria-hidden="true">03</span>
+                            <span data-i18n="audience_tab3">Technical advisors</span>
+                            <span class="audience-tab__progress" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="audience-gallery__panels">
+                        <article class="audience-panel is-active" id="audience-panel-1" role="tabpanel" aria-labelledby="audience-tab-1" tabindex="0" data-audience-panel="0">
+                            <div class="audience-panel__scene" aria-hidden="true">
+                                <div class="community-orbit community-orbit--one"></div>
+                                <div class="community-orbit community-orbit--two"></div>
+                                <svg class="community-art" viewBox="0 0 600 480" aria-hidden="true" focusable="false"><circle cx="300" cy="231" r="180" fill="#D8E8D8"/><circle cx="300" cy="231" r="155" fill="none" stroke="#AAC7B6" stroke-dasharray="3 9"/><circle class="community-sun" cx="407" cy="108" r="32" fill="#F1CD7C"/><path d="M57 306L149 180 227 259 302 157 414 280 477 211 554 313Z" fill="#B8CEC0"/><path d="M277 192L302 157 330 190 308 183 299 193 290 185Z" fill="#F5F7E9"/><path d="M30 347Q156 273 300 320T572 321L572 434H30Z" fill="#87B393"/><path d="M21 385Q187 322 329 370T579 357L579 449H21Z" fill="#4C8E6B"/><g fill="none" stroke="#C6E0B9" stroke-width="2" opacity=".45"><path d="M42 415Q230 340 558 402"/><path d="M48 432Q252 362 555 420"/><path d="M117 450Q302 396 552 438"/></g><ellipse cx="300" cy="439" rx="193" ry="17" fill="#255F48" opacity=".18"/><g class="community-person" style="--person-delay:-0.8s"><g transform="translate(292 282) scale(1.12 1.12)"><path d="M-29 36L-32 120-8 120 0 55 9 120 33 120 28 36Z" fill="#234B40"/><path d="M-33 117L-34 133-4 133-7 118M8 118L7 133 40 133 32 117" fill="#123A31"/><path d="M-20-56Q0-45 20-56L39-40 48-5 25 3 29 49Q0 60-30 49L-26 3-49-5-38-40Z" fill="#0B7667"/><path d="M-3-48V42" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="2"/><g class="community-head"><path d="M-26-89Q-30-126 0-129Q30-126 26-89L22-65Q0-43-22-65Z" fill="#B97650"/><path d="M-25-99Q-32-136 0-137Q29-133 27-99L14-111Q-4-101-25-99" fill="#173F36"/><path d="M-10-79Q0-72 10-79" fill="none" stroke="#743F2C" stroke-width="2.5" stroke-linecap="round"/><circle cx="-10" cy="-94" r="2" fill="#173F36"/><circle cx="10" cy="-94" r="2" fill="#173F36"/><path d="M-53-119Q0-137 53-119L48-109Q0-118-48-109Z" fill="#C99C58"/><path d="M-28-124L-21-153Q0-166 23-151L29-123Z" fill="#E8C686"/><path d="M-29-126Q0-135 30-125L28-117Q0-125-28-118Z" fill="#53704C"/></g><path d="M-44-20L-52 29" stroke="#B97650" stroke-width="16" stroke-linecap="round"/><path d="M42-20L55 11 76-15" stroke="#B97650" stroke-width="16" fill="none" stroke-linecap="round"/><g class="community-device"><rect x="67" y="-45" width="22" height="35" rx="4" fill="#163F36"/><rect x="71" y="-40" width="14" height="23" rx="2" fill="#8AE1B0"/></g></g></g><path d="M175 438Q168 385 185 345" stroke="#2F6C43" stroke-width="5" fill="none"/><g class="community-leaves" fill="#256B43"><path d="M177 405Q136 400 143 371Q176 374 177 405"/><path d="M177 390Q218 381 214 355Q180 360 177 390"/><path d="M183 369Q156 356 167 333Q191 347 183 369"/></g><path d="M397 435L407 375 451 375 460 435Z" fill="#DBAE70"/><path d="M412 377Q430 347 448 377" stroke="#F3D29C" stroke-width="5" fill="none"/><ellipse cx="429" cy="407" rx="13" ry="17" fill="#B1844F"/></svg>
+                                <span class="community-stamp"><span class="material-symbols-outlined">agriculture</span><span data-i18n="audience_scene1">Every plot matters</span></span>
+                            </div>
+                            <div class="audience-panel__copy">
+                                <p class="audience-panel__eyebrow"><span class="audience-panel__dot" aria-hidden="true"></span><span data-i18n="audience_tag1">Family farming</span></p>
+                                <h3 data-i18n="audience_story1_title">Your hard work deserves clear information.</h3>
+                                <p class="audience-panel__description" data-i18n="audience_story1_desc">For those who work their own plots and want to understand their crops and costs. Behind every harvest are decisions, dedication and a family moving forward.</p>
+                                <span class="audience-panel__signature" aria-hidden="true">Sumaq<span>Agro</span> <span class="audience-panel__signature-line"></span> 01 / 03</span>
+                            </div>
+                        </article>
+                        <article class="audience-panel" id="audience-panel-2" role="tabpanel" aria-labelledby="audience-tab-2" tabindex="0" data-audience-panel="1">
+                            <div class="audience-panel__scene" aria-hidden="true">
+                                <div class="community-orbit community-orbit--one"></div>
+                                <div class="community-orbit community-orbit--two"></div>
+                                <svg class="community-art" viewBox="0 0 600 480" aria-hidden="true" focusable="false"><circle cx="300" cy="231" r="180" fill="#D8E8D8"/><circle cx="300" cy="231" r="155" fill="none" stroke="#AAC7B6" stroke-dasharray="3 9"/><circle class="community-sun" cx="407" cy="108" r="32" fill="#F1CD7C"/><path d="M57 306L149 180 227 259 302 157 414 280 477 211 554 313Z" fill="#B8CEC0"/><path d="M277 192L302 157 330 190 308 183 299 193 290 185Z" fill="#F5F7E9"/><path d="M30 347Q156 273 300 320T572 321L572 434H30Z" fill="#87B393"/><path d="M21 385Q187 322 329 370T579 357L579 449H21Z" fill="#4C8E6B"/><g fill="none" stroke="#C6E0B9" stroke-width="2" opacity=".45"><path d="M42 415Q230 340 558 402"/><path d="M48 432Q252 362 555 420"/><path d="M117 450Q302 396 552 438"/></g><ellipse cx="300" cy="439" rx="193" ry="17" fill="#255F48" opacity=".18"/><g class="community-person" style="--person-delay:-0.8s"><g transform="translate(205 299) scale(0.87 0.87)"><path d="M-29 36L-32 120-8 120 0 55 9 120 33 120 28 36Z" fill="#234B40"/><path d="M-33 117L-34 133-4 133-7 118M8 118L7 133 40 133 32 117" fill="#123A31"/><path d="M-20-56Q0-45 20-56L39-40 48-5 25 3 29 49Q0 60-30 49L-26 3-49-5-38-40Z" fill="#D8B575"/><path d="M-3-48V42" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="2"/><g class="community-head"><path d="M-26-89Q-30-126 0-129Q30-126 26-89L22-65Q0-43-22-65Z" fill="#B97650"/><path d="M-25-99Q-32-136 0-137Q29-133 27-99L14-111Q-4-101-25-99" fill="#173F36"/><path d="M-10-79Q0-72 10-79" fill="none" stroke="#743F2C" stroke-width="2.5" stroke-linecap="round"/><circle cx="-10" cy="-94" r="2" fill="#173F36"/><circle cx="10" cy="-94" r="2" fill="#173F36"/><path d="M-53-119Q0-137 53-119L48-109Q0-118-48-109Z" fill="#C99C58"/><path d="M-28-124L-21-153Q0-166 23-151L29-123Z" fill="#E8C686"/><path d="M-29-126Q0-135 30-125L28-117Q0-125-28-118Z" fill="#53704C"/></g><path d="M-44-20L-52 29" stroke="#B97650" stroke-width="16" stroke-linecap="round"/><path d="M42-20L55 11 76-15" stroke="#B97650" stroke-width="16" fill="none" stroke-linecap="round"/><g class="community-device"><rect x="67" y="-45" width="22" height="35" rx="4" fill="#163F36"/><rect x="71" y="-40" width="14" height="23" rx="2" fill="#8AE1B0"/></g></g></g><g class="community-person" style="--person-delay:-1.6s"><g transform="translate(365 287) scale(1.02 1.02)"><path d="M-29 36L-32 120-8 120 0 55 9 120 33 120 28 36Z" fill="#234B40"/><path d="M-33 117L-34 133-4 133-7 118M8 118L7 133 40 133 32 117" fill="#123A31"/><path d="M-20-56Q0-45 20-56L39-40 48-5 25 3 29 49Q0 60-30 49L-26 3-49-5-38-40Z" fill="#176F5D"/><path d="M-3-48V42" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="2"/><g class="community-head"><path d="M-26-89Q-30-126 0-129Q30-126 26-89L22-65Q0-43-22-65Z" fill="#CB936D"/><path d="M-25-99Q-32-136 0-137Q29-133 27-99L14-111Q-4-101-25-99" fill="#173F36"/><path d="M-10-79Q0-72 10-79" fill="none" stroke="#743F2C" stroke-width="2.5" stroke-linecap="round"/><circle cx="-10" cy="-94" r="2" fill="#173F36"/><circle cx="10" cy="-94" r="2" fill="#173F36"/></g><path class="community-arm" d="M-42-13Q-49 8-45 29" fill="none" stroke="#CB936D" stroke-width="15" stroke-linecap="round"/><path class="community-arm" d="M42-13Q58 9 48 22L32 24" fill="none" stroke="#CB936D" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><g class="community-device"><rect x="8" y="-36" width="44" height="57" rx="6" fill="#153F35"/><rect x="13" y="-30" width="34" height="44" rx="3" fill="#B7DFCB"/><path d="M18 3L26-8 33-3 42-18" stroke="#16806A" stroke-width="3" fill="none"/><path d="M43 20L32 23" stroke="#CB936D" stroke-width="11" stroke-linecap="round"/></g></g></g><path d="M267 433L272 390H320L326 433Z" fill="#C8965D"/><path d="M278 390Q296 365 314 390" stroke="#F0CE9A" stroke-width="5" fill="none"/><g fill="#6E5836"><ellipse cx="283" cy="404" rx="5" ry="8"/><ellipse cx="302" cy="410" rx="5" ry="8"/></g><g class="community-leaves"><path d="M471 432Q465 372 487 329" fill="none" stroke="#245E3B" stroke-width="5"/><g fill="#286B42"><ellipse cx="464" cy="376" rx="22" ry="9" transform="rotate(32 464 376)"/><ellipse cx="491" cy="358" rx="23" ry="9" transform="rotate(-28 491 358)"/></g><g fill="#B55E45"><circle cx="477" cy="374" r="5"/><circle cx="484" cy="381" r="5"/><circle cx="479" cy="389" r="5"/></g></g></svg>
+                                <span class="community-stamp"><span class="material-symbols-outlined">diversity_3</span><span data-i18n="audience_scene2">Growing a community together</span></span>
+                            </div>
+                            <div class="audience-panel__copy">
+                                <p class="audience-panel__eyebrow"><span class="audience-panel__dot" aria-hidden="true"></span><span data-i18n="audience_tag2">Agricultural organizations</span></p>
+                                <h3 data-i18n="audience_story2_title">Many plots. One shared purpose.</h3>
+                                <p class="audience-panel__description" data-i18n="audience_story2_desc">For organizations connecting producers who need a shared view of their community and harvests. Growing together starts with sharing information and moving in the same direction.</p>
+                                <span class="audience-panel__signature" aria-hidden="true">Sumaq<span>Agro</span> <span class="audience-panel__signature-line"></span> 02 / 03</span>
+                            </div>
+                        </article>
+                        <article class="audience-panel" id="audience-panel-3" role="tabpanel" aria-labelledby="audience-tab-3" tabindex="0" data-audience-panel="2">
+                            <div class="audience-panel__scene" aria-hidden="true">
+                                <div class="community-orbit community-orbit--one"></div>
+                                <div class="community-orbit community-orbit--two"></div>
+                                <svg class="community-art" viewBox="0 0 600 480" aria-hidden="true" focusable="false"><circle cx="300" cy="231" r="180" fill="#D8E8D8"/><circle cx="300" cy="231" r="155" fill="none" stroke="#AAC7B6" stroke-dasharray="3 9"/><circle class="community-sun" cx="407" cy="108" r="32" fill="#F1CD7C"/><path d="M57 306L149 180 227 259 302 157 414 280 477 211 554 313Z" fill="#B8CEC0"/><path d="M277 192L302 157 330 190 308 183 299 193 290 185Z" fill="#F5F7E9"/><path d="M30 347Q156 273 300 320T572 321L572 434H30Z" fill="#87B393"/><path d="M21 385Q187 322 329 370T579 357L579 449H21Z" fill="#4C8E6B"/><g fill="none" stroke="#C6E0B9" stroke-width="2" opacity=".45"><path d="M42 415Q230 340 558 402"/><path d="M48 432Q252 362 555 420"/><path d="M117 450Q302 396 552 438"/></g><ellipse cx="300" cy="439" rx="193" ry="17" fill="#255F48" opacity=".18"/><g class="community-person" style="--person-delay:-1.6s"><g transform="translate(290 284) scale(1.1 1.1)"><path d="M-29 36L-32 120-8 120 0 55 9 120 33 120 28 36Z" fill="#234B40"/><path d="M-33 117L-34 133-4 133-7 118M8 118L7 133 40 133 32 117" fill="#123A31"/><path d="M-20-56Q0-45 20-56L39-40 48-5 25 3 29 49Q0 60-30 49L-26 3-49-5-38-40Z" fill="#E9CA89"/><path d="M-3-48V42" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="2"/><g class="community-head"><path d="M-26-89Q-30-126 0-129Q30-126 26-89L22-65Q0-43-22-65Z" fill="#BF825F"/><path d="M-25-99Q-32-136 0-137Q29-133 27-99L14-111Q-4-101-25-99" fill="#173F36"/><path d="M-10-79Q0-72 10-79" fill="none" stroke="#743F2C" stroke-width="2.5" stroke-linecap="round"/><circle cx="-10" cy="-94" r="2" fill="#173F36"/><circle cx="10" cy="-94" r="2" fill="#173F36"/></g><path class="community-arm" d="M-42-13Q-49 8-45 29" fill="none" stroke="#BF825F" stroke-width="15" stroke-linecap="round"/><path class="community-arm" d="M42-13Q58 9 48 22L32 24" fill="none" stroke="#BF825F" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><g class="community-device"><rect x="8" y="-36" width="44" height="57" rx="6" fill="#153F35"/><rect x="13" y="-30" width="34" height="44" rx="3" fill="#B7DFCB"/><path d="M18 3L26-8 33-3 42-18" stroke="#16806A" stroke-width="3" fill="none"/><path d="M43 20L32 23" stroke="#BF825F" stroke-width="11" stroke-linecap="round"/></g></g></g><g class="community-leaves" stroke="#386D47" stroke-width="4" fill="#60965E"><path d="M423 434V338"/><path d="M423 401Q385 392 392 368Q419 371 423 401"/><path d="M423 384Q457 370 452 348Q424 353 423 384"/><path d="M423 360Q405 345 421 323Q438 341 423 360"/></g></svg>
+                                <span class="community-stamp"><span class="material-symbols-outlined">eco</span><span data-i18n="audience_scene3">Knowledge by your side</span></span>
+                            </div>
+                            <div class="audience-panel__copy">
+                                <p class="audience-panel__eyebrow"><span class="audience-panel__dot" aria-hidden="true"></span><span data-i18n="audience_tag3">Technical assistance</span></p>
+                                <h3 data-i18n="audience_story3_title">Your expertise, closer to every grower.</h3>
+                                <p class="audience-panel__description" data-i18n="audience_story3_desc">For professionals who advise farmers and follow the work on their plots. Your knowledge and connection with each producer make a difference in the field.</p>
+                                <span class="audience-panel__signature" aria-hidden="true">Sumaq<span>Agro</span> <span class="audience-panel__signature-line"></span> 03 / 03</span>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="audience-gallery__controls" role="group" aria-label="Presentation controls" data-i18n-attr="aria-label:audience_controls">
+                        <p><span class="audience-gallery__spark" aria-hidden="true">✦</span><span data-i18n="audience_explore">Choose a profile and discover their story</span></p>
+                        <button class="audience-playback" type="button" aria-pressed="false" data-audience-playback>
+                            <span class="material-symbols-outlined" aria-hidden="true" data-audience-playback-icon>pause</span>
+                            <span data-i18n="audience_pause" data-audience-playback-label>Pause presentation</span>
+                        </button>
+                    </div>
+                    <p class="visually-hidden" aria-live="polite" aria-atomic="true" data-audience-status></p>
                 </div>
             </div>
         </section>

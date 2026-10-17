@@ -66,6 +66,7 @@ function setLanguage(lang) {
 
     updatePrices();
     updateFilterStatus();
+    document.dispatchEvent(new Event('sumaq:languagechange'));
 }
 
 function initLanguageToggle() {
@@ -246,6 +247,135 @@ function initSolutionsFilter() {
             updateFilterStatus();
         });
     });
+}
+
+/* ---------- Community gallery ---------- */
+
+function initAudienceGallery() {
+    const gallery = document.querySelector('[data-audience-gallery]');
+    if (!gallery) return;
+
+    const tabs = [...gallery.querySelectorAll('[data-audience-tab]')];
+    const panels = [...gallery.querySelectorAll('[data-audience-panel]')];
+    const playback = gallery.querySelector('[data-audience-playback]');
+    const playbackLabel = gallery.querySelector('[data-audience-playback-label]');
+    const playbackIcon = gallery.querySelector('[data-audience-playback-icon]');
+    const status = gallery.querySelector('[data-audience-status]');
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const duration = 10000;
+    const pauses = new Set(['offscreen']);
+    let active = 0;
+    let elapsed = 0;
+    let lastTime = 0;
+    let frame = null;
+    let userPaused = motionPreference.matches;
+
+    const updatePlayback = () => {
+        const key = userPaused ? 'audience_play' : 'audience_pause';
+        playbackLabel.dataset.i18n = key;
+        playbackLabel.textContent = t(key);
+        playbackIcon.textContent = userPaused ? 'play_arrow' : 'pause';
+        playback.setAttribute('aria-pressed', String(userPaused));
+    };
+
+    const select = (index, manual = false) => {
+        active = (index + tabs.length) % tabs.length;
+        elapsed = 0;
+        lastTime = performance.now();
+        gallery.style.setProperty('--audience-progress', '0');
+
+        tabs.forEach((tab, i) => {
+            const selected = i === active;
+            tab.classList.toggle('is-active', selected);
+            tab.classList.toggle('is-complete', i < active);
+            tab.setAttribute('aria-selected', String(selected));
+            tab.tabIndex = selected ? 0 : -1;
+            panels[i].classList.toggle('is-active', selected);
+            panels[i].setAttribute('aria-hidden', String(!selected));
+            panels[i].inert = !selected;
+        });
+
+        if (manual) {
+            status.textContent = t('audience_status').replace('{segment}', t(`audience_tab${active + 1}`));
+        }
+    };
+
+    const tick = now => {
+        elapsed += Math.max(0, now - lastTime);
+        lastTime = now;
+        if (elapsed >= duration) select(active + 1);
+        gallery.style.setProperty('--audience-progress', String(elapsed / duration));
+        frame = requestAnimationFrame(tick);
+    };
+
+    const syncPlayback = () => {
+        const paused = userPaused || pauses.size > 0;
+        gallery.classList.toggle('is-paused', paused);
+        if (paused && frame !== null) {
+            cancelAnimationFrame(frame);
+            frame = null;
+        } else if (!paused && frame === null) {
+            lastTime = performance.now();
+            frame = requestAnimationFrame(tick);
+        }
+    };
+
+    const setPause = (reason, paused) => {
+        if (paused) pauses.add(reason);
+        else pauses.delete(reason);
+        syncPlayback();
+    };
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            select(index, true);
+            syncPlayback();
+        });
+        tab.addEventListener('keydown', event => {
+            let next;
+            if (event.key === 'ArrowRight') next = (active + 1) % tabs.length;
+            if (event.key === 'ArrowLeft') next = (active - 1 + tabs.length) % tabs.length;
+            if (event.key === 'Home') next = 0;
+            if (event.key === 'End') next = tabs.length - 1;
+            if (next === undefined) return;
+            event.preventDefault();
+            select(next, true);
+            tabs[next].focus();
+            syncPlayback();
+        });
+    });
+
+    playback.addEventListener('click', () => {
+        userPaused = !userPaused;
+        updatePlayback();
+        syncPlayback();
+    });
+    // Selecting or hovering a segment leaves playback under the pause button's control.
+    const updateVisibility = () => setPause('document', document.hidden);
+    document.addEventListener('visibilitychange', updateVisibility);
+    document.addEventListener('sumaq:languagechange', () => {
+        status.textContent = '';
+        updatePlayback();
+    });
+    motionPreference.addEventListener('change', event => {
+        if (event.matches) userPaused = true;
+        updatePlayback();
+        syncPlayback();
+    });
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+            setPause('offscreen', entries[0].intersectionRatio < .35);
+        }, { threshold: .35 });
+        observer.observe(gallery.querySelector('.audience-gallery__panels'));
+    } else {
+        pauses.delete('offscreen');
+        userPaused = true;
+    }
+
+    select(0);
+    updatePlayback();
+    updateVisibility();
 }
 
 /* ---------- Pricing (US-07) ---------- */
@@ -546,6 +676,7 @@ function initApp() {
     initHeroParallax();
     initVideos();
     initCarousel();
+    initAudienceGallery();
     initReveal();
     initLegalDialog();
 }
