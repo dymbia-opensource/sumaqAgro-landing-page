@@ -262,7 +262,7 @@ function initAudienceGallery() {
     const playbackIcon = gallery.querySelector('[data-audience-playback-icon]');
     const status = gallery.querySelector('[data-audience-status]');
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const duration = 8000;
+    const duration = 10000;
     const pauses = new Set(['offscreen']);
     let active = 0;
     let elapsed = 0;

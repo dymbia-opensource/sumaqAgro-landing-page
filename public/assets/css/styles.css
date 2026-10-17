@@ -1445,14 +1445,14 @@ p a,
 }
 .community-art { position: relative; z-index: 1; width: 100%; max-width: 580px; height: auto; }
 .community-person {
-    animation: community-breathe 4.8s ease-in-out infinite;
+    animation: community-breathe 6s ease-in-out infinite;
     animation-delay: var(--person-delay, 0s);
     transform-box: fill-box;
     transform-origin: center bottom;
 }
-.community-head { animation: community-nod 6.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
-.community-leaves { animation: community-sway 4.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
-.community-device { animation: community-device 4.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
+.community-head { animation: community-nod 8s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
+.community-leaves { animation: community-sway 7s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
+.community-device { animation: community-device 6s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
 .community-sun { animation: community-sun 7s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
 .community-orbit {
     position: absolute;
