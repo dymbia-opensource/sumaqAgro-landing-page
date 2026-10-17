@@ -65,7 +65,6 @@ function setLanguage(lang) {
     });
 
     updatePrices();
-    updatePlanFinder();
     updateFilterStatus();
 }
 
@@ -251,11 +250,47 @@ function initSolutionsFilter() {
 
 /* ---------- Pricing (US-07) ---------- */
 
+// Amounts in céntimos keep the annual charge exactly equal to ten monthly charges.
+const PLAN_CATALOG = {
+    seed: { name: 'plan1_name', monthly: 4900, cta: 'plan1_btn' },
+    cooperative: { name: 'plan2_name', monthly: 18900, cta: 'plan2_btn' },
+    advisor: { name: 'plan3_name', monthly: 8900, cta: 'plan3_btn' }
+};
+
+function formatPlanPrice(cents, fixedDecimals = false) {
+    const whole = Math.floor(cents / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    const fraction = cents % 100;
+    return `S/${whole}${fraction || fixedDecimals ? `,${String(fraction).padStart(2, '0')}` : ''}`;
+}
+
+function getPlanCharge(plan) {
+    return plan.monthly * (currentBilling === 'annual' ? 10 : 1);
+}
+
+function getPlanContactUrl(plan) {
+    const planName = currentLang === 'es' && plan.name === 'plan2_name'
+        ? `plan ${t(plan.name)}`
+        : t(plan.name);
+    const message = t('plans_contact_message')
+        .replace('{plan}', planName)
+        .replace('{billing}', t(currentBilling === 'annual' ? 'plans_year' : 'plans_month').toLowerCase())
+        .replace('{price}', formatPlanPrice(getPlanCharge(plan)))
+        .replace('{period}', t(currentBilling === 'annual' ? 'plans_contact_year' : 'plans_contact_month'));
+    return `mailto:contacto@sumaqagro.pe?subject=${encodeURIComponent(t('plans_contact_subject'))}&body=${encodeURIComponent(message)}`;
+}
+
+function updatePlanContacts() {
+    document.querySelectorAll('[data-plan-contact]').forEach(link => {
+        const plan = PLAN_CATALOG[link.dataset.planContact];
+        if (plan) link.href = getPlanContactUrl(plan);
+    });
+}
+
 function updatePrices() {
     const isAnnual = currentBilling === 'annual';
 
-    document.querySelectorAll('.price-val').forEach(element => {
-        element.textContent = element.dataset[currentBilling] || element.textContent;
+    document.querySelectorAll('[data-price-plan]').forEach(element => {
+        element.textContent = formatPlanPrice(getPlanCharge(PLAN_CATALOG[element.dataset.pricePlan]));
     });
 
     document.querySelectorAll('[data-period]').forEach(element => {
@@ -263,8 +298,13 @@ function updatePrices() {
     });
 
     document.querySelectorAll('[data-annual-note]').forEach(element => {
+        const plan = PLAN_CATALOG[element.dataset.annualNote];
+        element.textContent = t('plans_annual_note').replace('{price}', formatPlanPrice(Math.round(plan.monthly * 10 / 12), true));
         element.hidden = !isAnnual;
     });
+
+    updatePlanFinder();
+    updatePlanContacts();
 }
 
 function initBilling() {
@@ -282,6 +322,10 @@ function initBilling() {
                 item.setAttribute('aria-pressed', String(isActive));
             });
 
+            // Contact links and the final recommendation change with the selected period immediately.
+            updatePlanFinder();
+            updatePlanContacts();
+
             const prices = document.querySelectorAll('.price-val');
             prices.forEach(element => element.classList.add('price-updating'));
 
@@ -295,22 +339,20 @@ function initBilling() {
 
 /* ---------- Plan finder (final CTA) ---------- */
 
-const FINDER_PLANS = {
-    seed: { name: 'plan1_name', price: 'S/0', cta: 'finder_cta_seed' },
-    cooperative: { name: 'plan2_name', price: 'S/189', cta: 'finder_cta_cooperative' },
-    advisor: { name: 'plan3_name', price: 'S/89', cta: 'finder_cta_advisor' }
-};
-
 function updatePlanFinder() {
     const form = document.querySelector('.plan-finder');
     if (!form) return;
 
     const selected = form.querySelector('input[name="plan"]:checked');
-    const plan = FINDER_PLANS[selected ? selected.value : 'seed'];
-    const perMonth = plan.price === 'S/0' ? '' : t('plans_month_suffix');
+    const planId = selected ? selected.value : 'seed';
+    const plan = PLAN_CATALOG[planId];
+    const period = t(currentBilling === 'annual' ? 'plans_year_suffix' : 'plans_month_suffix');
 
-    form.querySelector('[data-finder-plan]').textContent = `${t(plan.name)} · ${plan.price}${perMonth}`;
-    form.querySelector('[data-finder-cta]').textContent = t(plan.cta);
+    form.querySelector('[data-finder-plan]').textContent = `${t(plan.name)} · ${formatPlanPrice(getPlanCharge(plan))}${period}`;
+    const contact = form.querySelector('[data-finder-cta]');
+    contact.textContent = t(plan.cta);
+    contact.dataset.planContact = planId;
+    contact.href = getPlanContactUrl(plan);
 }
 
 function initPlanFinder() {
