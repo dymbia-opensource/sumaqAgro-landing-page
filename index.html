@@ -7,569 +7,850 @@
 
     <title>SumaqAgro – Satellite Monitoring and Precision Agriculture Management</title>
     <meta name="description" content="Agrotechnology platform for Peruvian agriculture. Optimize crop performance with NDVI maps, plot cost management, QR traceability, and phytosanitary risk alerts.">
-    <meta name="keywords"
-        content="SumaqAgro, agricultural satellite monitoring, NDVI index, precision agriculture Peru, agricultural cooperative management, agricultural cost control, QR harvest certification, phytosanitary alerts">
+    <meta name="keywords" content="SumaqAgro, agricultural satellite monitoring, NDVI index, precision agriculture Peru, agricultural cooperative management, agricultural cost control, QR harvest certification, phytosanitary alerts">
     <meta name="author" content="Open Source Team – Open Source Software">
+    <meta name="theme-color" content="#004D40">
+    <link rel="canonical" href="https://sumaqagro-landing-page.pages.dev/">
 
-    <meta property="og:title" content="SumaqAgro – Satellite Monitoring and Precision Agriculture Management">
-    <meta property="og:description"
-        content="Turn satellite and agricultural data into precise decisions for farmers, cooperatives, and agronomists.">
-    <meta property="og:image" content="assets/images/brand-logo.png">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SumaqAgro">
+    <meta property="og:url" content="https://sumaqagro-landing-page.pages.dev/">
+    <meta property="og:title" content="SumaqAgro – Satellite Monitoring and Precision Agriculture Management">
+    <meta property="og:description" content="Monitor your potato and coffee plots by satellite, know your real cost per sack and certify your harvest. No sensors required. Start free.">
+    <meta property="og:image" content="https://sumaqagro-landing-page.pages.dev/public/assets/images/app-dashboard.webp">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="es_PE">
+    <meta name="twitter:card" content="summary_large_image">
 
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="icon" href="public/assets/images/brand-logo.png" type="image/png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..600,0..1,0&display=block">
     <link rel="stylesheet" href="public/assets/css/styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SumaqAgro",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Precision agriculture SaaS for potato and coffee growers in Peru: satellite NDVI/NDWI monitoring, lot cost accounting, QR harvest certification and agronomic alerts.",
+        "url": "https://sumaqagro-landing-page.pages.dev/",
+        "publisher": { "@type": "Organization", "name": "Dymbia" },
+        "offers": [
+            { "@type": "Offer", "name": "Seed Plan", "price": "0", "priceCurrency": "PEN" },
+            { "@type": "Offer", "name": "Technical Advisor Plan", "price": "89", "priceCurrency": "PEN" },
+            { "@type": "Offer", "name": "Cooperative Pro", "price": "189", "priceCurrency": "PEN" }
+        ]
+    }
+    </script>
 </head>
 
 <body>
 
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content" data-i18n="skip_link">Skip to content</a>
 
-    <header class="site-header" id="home">
-        <nav class="nav container" aria-label="Main navigation">
+    <!-- Header: glass pill navigation over the hero, solid after scrolling -->
+    <header class="site-header site-header--overlay is-over-hero" id="home">
+        <nav class="nav container" aria-label="Main navigation" data-i18n-attr="aria-label:aria_main_nav">
             <a class="brand" href="#hero" aria-label="SumaqAgro, home">
-                <img src="public/assets/images/brand-logo.png" alt="SumaqAgro" width="99" height="93">
+                <img src="public/assets/images/brand-logo.png" alt="" width="48" height="45">
+                <span class="brand__name">Sumaq<span>Agro</span></span>
             </a>
 
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"
-                aria-label="Open navigation menu">
+                aria-label="Open navigation menu" data-i18n-attr="aria-label:aria_open_menu">
                 <span></span><span></span><span></span>
             </button>
 
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="#hero" data-i18n="nav_start">Home</a></li>
-                    <li><a href="#about" data-i18n="nav_about">About Us</a></li>
+                    <li><a href="#hero"><span class="material-symbols-outlined" aria-hidden="true">home</span><span data-i18n="nav_start">Home</span></a></li>
                     <li><a href="#solutions" data-i18n="nav_solutions">Solutions</a></li>
+                    <li><a href="#how-it-works" data-i18n="nav_how">How it works</a></li>
                     <li><a href="#plans" data-i18n="nav_plans">Plans</a></li>
                     <li><a href="#impact" data-i18n="nav_impact">Impact</a></li>
+                    <li><a href="#about" data-i18n="nav_about">About Us</a></li>
                 </ul>
 
                 <div class="nav-actions">
-                    <a class="button button--small button--primary" href="/app/login" data-i18n="nav_login">Sign In</a>
-                    <a class="button button--small button--outline" href="/app/register"
-                        data-i18n="nav_register">Register</a>
-
-                    <button class="language" type="button" aria-label="Current language: English">
-                        <span data-i18n="nav_lang_label">EN</span>
-                    </button>
+                    <div class="language" role="group" aria-label="Language" data-i18n-attr="aria-label:aria_language">
+                        <button class="language__option" type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+                        <button class="language__option" type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+                    </div>
+                    <a class="nav-login" href="https://sumaqagro-appweb.web.app/demo-access" data-i18n="nav_login">Sign In</a>
+                    <a class="button button--dark" href="#plans" data-i18n="nav_register">Start free</a>
                 </div>
             </div>
         </nav>
     </header>
 
     <main id="main-content">
-        <section class="hero" aria-labelledby="hero-title" id="hero">
-            <div class="hero__overlay"></div>
-            <div class="hero__content container">
-                <p class="eyebrow" data-i18n="hero_eyebrow">SMART AGRICULTURE FOR A BETTER TOMORROW</p>
-                <h1 id="hero-title" data-i18n="hero_title">
-                    Cultivate with Information.<br>
-                    <span>Decide with Precision</span>
+
+        <!-- 1. Hero: immersive Andean landscape with parallax layers -->
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <div class="hero__scene" aria-hidden="true">
+                <!-- Sky: stars, sunrise, satellite scanning the fields -->
+                <svg class="hero__layer" data-depth="0.55" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+                    <defs>
+                        <radialGradient id="sun-glow">
+                            <stop offset="0" stop-color="#FFE7A8" stop-opacity=".95" />
+                            <stop offset=".35" stop-color="#F6C86B" stop-opacity=".45" />
+                            <stop offset="1" stop-color="#F6C86B" stop-opacity="0" />
+                        </radialGradient>
+                        <linearGradient id="scan-beam" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#69F0AE" stop-opacity=".45" />
+                            <stop offset="1" stop-color="#69F0AE" stop-opacity="0" />
+                        </linearGradient>
+                    </defs>
+                    <g fill="#fff" class="hero__stars">
+                        <circle cx="120" cy="90" r="1.4" /><circle cx="260" cy="40" r="1" /><circle cx="410" cy="130" r="1.2" />
+                        <circle cx="560" cy="60" r="1.6" /><circle cx="700" cy="150" r="1" /><circle cx="880" cy="70" r="1.3" />
+                        <circle cx="1010" cy="30" r="1" /><circle cx="1320" cy="80" r="1.5" /><circle cx="1400" cy="190" r="1" />
+                        <circle cx="60" cy="230" r="1" /><circle cx="330" cy="250" r="1.1" /><circle cx="960" cy="210" r="1" />
+                    </g>
+                    <circle cx="1080" cy="540" r="300" fill="url(#sun-glow)" />
+                    <circle cx="1080" cy="540" r="62" fill="#FFE3A0" />
+                    <path d="M560 60 Q 1060 110 1470 360" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="1.5" stroke-dasharray="4 10" />
+                    <polygon class="hero__beam" points="1176,170 990,700 1300,700" fill="url(#scan-beam)" />
+                    <g class="hero__satellite" transform="translate(1176 162) rotate(-18)">
+                        <rect x="-30" y="-4" width="20" height="8" rx="1" fill="#69F0AE" />
+                        <rect x="10" y="-4" width="20" height="8" rx="1" fill="#69F0AE" />
+                        <rect x="-9" y="-7" width="18" height="14" rx="3" fill="#E6F4F1" />
+                        <circle cx="0" cy="9" r="2.5" fill="#E6F4F1" />
+                    </g>
+                </svg>
+
+                <!-- Far snow-capped Andes -->
+                <svg class="hero__layer" data-depth="0.35" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+                    <path fill="#5E8F86" d="M0 600 L90 540 L160 565 L250 470 L310 500 L380 430 L450 505 L520 480 L600 540 L690 455 L760 410 L830 470 L900 445 L980 520 L1060 470 L1130 400 L1210 460 L1290 430 L1360 500 L1440 470 L1440 900 L0 900 Z" />
+                    <g fill="#E8F3EF" opacity=".9">
+                        <path d="M228 488 L250 470 L274 488 L262 484 L251 494 L240 484 Z" />
+                        <path d="M352 455 L380 430 L410 458 L396 452 L383 464 L368 451 Z" />
+                        <path d="M728 440 L760 410 L795 437 L778 432 L764 446 L746 433 Z" />
+                        <path d="M1098 430 L1130 400 L1165 427 L1148 422 L1133 436 L1116 423 Z" />
+                        <path d="M1266 448 L1290 430 L1314 447 L1302 444 L1291 452 L1279 443 Z" />
+                    </g>
+                </svg>
+
+                <div class="hero__mist" data-depth="0.25"></div>
+
+                <!-- Mid mountains -->
+                <svg class="hero__layer" data-depth="0.18" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+                    <path fill="#245A50" d="M0 680 C120 620 200 600 300 640 C380 670 440 590 540 600 C640 610 700 680 820 650 C920 625 980 560 1100 585 C1220 610 1300 660 1440 620 L1440 900 L0 900 Z" />
+                    <path fill="#2C6A5C" opacity=".7" d="M540 600 C640 610 700 680 820 650 C760 700 640 700 560 690 Z" />
+                </svg>
+
+                <!-- Andean terraces with coffee shrubs -->
+                <svg class="hero__layer" data-depth="0.08" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+                    <defs>
+                        <pattern id="shrubs" width="34" height="22" patternUnits="userSpaceOnUse">
+                            <circle cx="10" cy="12" r="7" fill="#1F5A3A" />
+                            <circle cx="27" cy="6" r="5.5" fill="#24663F" />
+                        </pattern>
+                    </defs>
+                    <path fill="#2E7A55" d="M0 760 C200 700 360 690 520 730 C640 760 760 720 900 735 C1060 752 1200 700 1440 720 L1440 900 L0 900 Z" />
+                    <g fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="2">
+                        <path d="M0 788 C200 728 360 718 520 758 C640 788 760 748 900 763 C1060 780 1200 728 1440 748" />
+                        <path d="M0 816 C200 756 360 746 520 786 C640 816 760 776 900 791 C1060 808 1200 756 1440 776" />
+                        <path d="M0 844 C200 784 360 774 520 814 C640 844 760 804 900 819 C1060 836 1200 784 1440 804" />
+                    </g>
+                    <path fill="url(#shrubs)" opacity=".85" d="M940 745 C1060 760 1200 708 1440 728 L1440 800 C1200 780 1060 830 940 815 Z" />
+                </svg>
+
+                <!-- Foreground field with crop rows and a farmer checking the app -->
+                <svg class="hero__layer" data-depth="0" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+                    <defs>
+                        <clipPath id="field-clip">
+                            <path d="M0 820 C300 790 600 800 760 815 C980 835 1200 800 1440 810 L1440 900 L0 900 Z" />
+                        </clipPath>
+                    </defs>
+                    <path fill="#062B25" d="M0 820 C300 790 600 800 760 815 C980 835 1200 800 1440 810 L1440 900 L0 900 Z" />
+                    <g clip-path="url(#field-clip)" stroke="#0E4237" stroke-width="3">
+                        <line x1="-300" y1="900" x2="360" y2="815" /><line x1="0" y1="900" x2="465" y2="815" />
+                        <line x1="300" y1="900" x2="570" y2="815" /><line x1="600" y1="900" x2="675" y2="815" />
+                        <line x1="900" y1="900" x2="780" y2="815" /><line x1="1200" y1="900" x2="885" y2="815" />
+                        <line x1="1500" y1="900" x2="990" y2="815" /><line x1="1800" y1="900" x2="1095" y2="815" />
+                    </g>
+                    <g fill="#031D19" transform="translate(216 0)">
+                        <path d="M372 805 L376 760 L384 760 L382 805 Z" />
+                        <path d="M388 805 L388 760 L396 760 L398 805 Z" />
+                        <path d="M368 762 C366 742 370 728 384 726 C398 728 402 742 400 762 Z" />
+                        <circle cx="384" cy="716" r="8" />
+                        <ellipse cx="384" cy="709" rx="15" ry="3.5" />
+                        <path d="M376 709 C377 699 391 699 392 709 Z" />
+                        <path d="M396 735 L410 722 L413 725 L400 741 Z" />
+                        <rect class="hero__phone" x="408" y="711" width="8" height="12" rx="1.5" fill="#69F0AE" />
+                    </g>
+                </svg>
+            </div>
+            <div class="hero__shade" aria-hidden="true"></div>
+
+            <div class="container hero__content" data-depth="0.3">
+                <p class="hero__eyebrow" data-i18n="hero_eyebrow">Precision farming · Potato &amp; coffee</p>
+                <h1 id="hero-title" class="hero__title" data-i18n="hero_title">
+                    Cultivate with Information.<br><span>Decide with Precision.</span>
                 </h1>
-                <p data-i18n="hero_desc">SumaqAgro transforms satellite and agricultural data into actionable insights
-                    to help you monitor crops, control costs, and improve production value.</p>
-                <div class="hero__actions">
-                    <a class="button button--hero button--primary" href="#about" data-i18n="hero_explore">Explore →</a>
-                    <a class="button button--hero button--light" href="#solutions" data-i18n="hero_how">How it works</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section about" id="about" aria-labelledby="about-title">
-            <div class="container">
-                <p class="eyebrow" data-i18n="about_eyebrow">ABOUT SUMAQAGRO</p>
-                <h2 class="section-title" id="about-title" data-i18n="about_title">About Us</h2>
-                <div class="about__grid">
-                    <img class="about__image" src="public/assets/images/about-farm.png"
-                        alt="View of crops monitored with mobile technology" width="720" height="357">
-                    <div class="about__copy">
-                        <h3 data-i18n="about_subtitle">Democratizing precision agriculture in Peru</h3>
-                        <p data-i18n="about_desc">
-                            <strong>SumaqAgro</strong> was created to bridge the technology gap in potato and
-                            coffee-growing regions without requiring expensive ground sensors. We convert open satellite
-                            imagery and agronomic data into accessible monitoring, real-cost accounting, and quality
-                            certification tools, allowing farmers and agricultural organizations to make technically
-                            supported decisions.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section audience" aria-labelledby="audience-title">
-            <div class="container">
-                <p class="eyebrow" data-i18n="audience_eyebrow">OUR COMMUNITY</p>
-                <h2 class="section-title" id="audience-title" data-i18n="audience_title">Who do we help?</h2>
-                <p class="section-description section-description--center" data-i18n="audience_desc">
-                    We work with those who make national food security possible.
+                <p class="hero__lead" data-i18n="hero_desc">
+                    Monitor your potato and coffee plots by satellite, know what each sack really costs you and
+                    certify the quality of your harvest. All from your phone, with no sensors in the field.
                 </p>
-                <div class="audience__grid">
-                    <article class="audience-card">
-                        <div class="audience-card__icon">
-                            <span class="material-symbols-outlined">collections_bookmark</span>
-                        </div>
-                        <span class="tag" data-i18n="audience_tag1">Family Farming</span>
-                        <h3 data-i18n="audience_card1_title">Independent Farmers</h3>
-                        <div class="audience-card__body">
-                            <p data-i18n="audience_card1_focus">Focus: Rainfed potato and coffee</p>
-                            <img src="public/assets/images/audience-farmer.png" alt="Farmer working in a crop field"
-                                width="739" height="415">
-                        </div>
-                        <a class="button button--card" href="/app/register" data-i18n="audience_card1_btn">Register my
-                            plot</a>
-                    </article>
-                    <article class="audience-card">
-                        <div class="audience-card__icon">
-                            <span class="material-symbols-outlined">collections_bookmark</span>
-                        </div>
-                        <span class="tag" data-i18n="audience_tag2">Agricultural Organizations</span>
-                        <h3 data-i18n="audience_card2_title">Cooperative Leaders</h3>
-                        <div class="audience-card__body">
-                            <p data-i18n="audience_card2_focus">Focus: Collective collection and traceability</p>
-                            <img src="public/assets/images/audience-cooperative.png"
-                                alt="Representatives of a coffee cooperative" width="768" height="399">
-                        </div>
-                        <a class="button button--card" href="/app/register" data-i18n="audience_card2_btn">Manage
-                            cooperative</a>
-                    </article>
-                    <article class="audience-card">
-                        <div class="audience-card__icon">
-                            <span class="material-symbols-outlined">collections_bookmark</span>
-                        </div>
-                        <span class="tag" data-i18n="audience_tag3">Technical Assistance</span>
-                        <h3 data-i18n="audience_card3_title">Technical Advisors & Agronomists</h3>
-                        <div class="audience-card__body">
-                            <p data-i18n="audience_card3_focus">Focus: Multi-field monitoring</p>
-                            <img src="public/assets/images/audience-advisor.png"
-                                alt="Agricultural advisors reviewing a crop" width="500" height="336">
-                        </div>
-                        <a class="button button--card" href="/app/register" data-i18n="audience_card3_btn">Join as an
-                            advisor</a>
-                    </article>
+                <div class="hero__actions">
+                    <a class="button button--accent button--large" href="#plans" data-i18n="hero_cta">
+                        Start free <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+                    </a>
+                    <a class="button button--glass button--large" href="#demo" data-i18n="hero_how">
+                        <span class="material-symbols-outlined" aria-hidden="true">play_circle</span> Watch the demo
+                    </a>
                 </div>
+            </div>
+
+            <a class="hero__scroll container" href="#platform">
+                <span data-i18n="hero_scroll">Scroll down</span>
+                <span class="material-symbols-outlined" aria-hidden="true">south</span>
+            </a>
+        </section>
+
+        <!-- 1b. Platform showcase: continues the hero's dark field -->
+        <section class="showcase" id="platform" aria-labelledby="showcase-title">
+            <div class="marquee" aria-hidden="true">
+                <div class="marquee__track">
+                    <span data-i18n="marquee1">Satellite intelligence</span><span data-i18n="marquee2">Andean potato</span>
+                    <span data-i18n="marquee3">Specialty coffee</span><span data-i18n="marquee4">Cost per lot</span>
+                    <span data-i18n="marquee5">QR certification</span><span data-i18n="marquee6">Frost alerts</span>
+                    <span data-i18n="marquee1">Satellite intelligence</span><span data-i18n="marquee2">Andean potato</span>
+                    <span data-i18n="marquee3">Specialty coffee</span><span data-i18n="marquee4">Cost per lot</span>
+                    <span data-i18n="marquee5">QR certification</span><span data-i18n="marquee6">Frost alerts</span>
+                </div>
+            </div>
+            <div class="container showcase__grid">
+                <div class="showcase__copy">
+                    <p class="eyebrow eyebrow--light" data-i18n="showcase_eyebrow">The platform</p>
+                    <h2 class="section-title" id="showcase-title" data-i18n="showcase_title">Your plot, seen from space</h2>
+                    <p data-i18n="showcase_desc">Vigor, moisture, costs and alerts for each plot on one screen, built for growers, cooperatives and advisors.</p>
+                    <ul class="hero__trust">
+                        <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span data-i18n="hero_trust1">Free Seed Plan, forever</span></li>
+                        <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span data-i18n="hero_trust2">No sensors or hardware</span></li>
+                        <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span data-i18n="hero_trust3">Works offline in the field</span></li>
+                    </ul>
+                </div>
+                <figure class="showcase__visual reveal">
+                    <div class="browser-frame">
+                        <div class="browser-frame__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                        <img src="public/assets/images/app-dashboard.webp" width="1400" height="614" loading="lazy"
+                            alt="SumaqAgro dashboard showing leaf health (NDVI 0.76), total spend of S/ 4,870 and a break-even price of S/ 16.23 per sack"
+                            data-i18n-attr="alt:hero_img_alt">
+                    </div>
+                    <div class="hero__badge hero__badge--top" aria-hidden="true">
+                        <span class="material-symbols-outlined">satellite_alt</span>
+                        <div><strong>NDVI 0.76</strong><small data-i18n="hero_badge1">Healthy vigor</small></div>
+                    </div>
+                    <div class="hero__badge hero__badge--bottom" aria-hidden="true">
+                        <span class="material-symbols-outlined">savings</span>
+                        <div><strong>S/ 16.23</strong><small data-i18n="hero_badge2">Your break-even price</small></div>
+                    </div>
+                </figure>
             </div>
         </section>
 
+        <!-- 2. Problem -->
+        <section class="section problem" id="problem" aria-labelledby="problem-title">
+            <div class="container">
+                <header class="section-heading">
+                    <p class="eyebrow" data-i18n="problem_eyebrow">The challenge</p>
+                    <h2 class="section-title" id="problem-title" data-i18n="problem_title">Farming by eye costs too much</h2>
+                    <p class="section-lead" data-i18n="problem_desc">
+                        Most small growers find out about frost, drought or pests when the damage is already visible,
+                        and sell their harvest without knowing their real cost.
+                    </p>
+                </header>
+
+                <div class="problem__grid">
+                    <article class="problem-card reveal">
+                        <span class="problem-card__number" aria-hidden="true">01</span>
+                        <span class="icon-badge icon-badge--warning"><span class="material-symbols-outlined" aria-hidden="true">ac_unit</span></span>
+                        <h3 data-i18n="problem1_title">Climate risks detected too late</h3>
+                        <p data-i18n="problem1_desc">Frost, water stress and pests such as coffee rust or the Andean potato weevil are noticed only when the foliage is already damaged.</p>
+                    </article>
+                    <article class="problem-card reveal">
+                        <span class="problem-card__number" aria-hidden="true">02</span>
+                        <span class="icon-badge icon-badge--warning"><span class="material-symbols-outlined" aria-hidden="true">menu_book</span></span>
+                        <h3 data-i18n="problem2_title">Costs written in a notebook</h3>
+                        <p data-i18n="problem2_desc">Without adding up day labor, inputs and freight per lot, many growers sell below their break-even point without realizing it.</p>
+                    </article>
+                    <article class="problem-card reveal">
+                        <span class="problem-card__number" aria-hidden="true">03</span>
+                        <span class="icon-badge icon-badge--warning"><span class="material-symbols-outlined" aria-hidden="true">price_change</span></span>
+                        <h3 data-i18n="problem3_title">Quality that nobody can prove</h3>
+                        <p data-i18n="problem3_desc">With no record of potato size grading or coffee cup score, middlemen apply arbitrary deductions on weight and price.</p>
+                    </article>
+                </div>
+
+                <dl class="stats-band reveal">
+                    <div class="stats-band__item">
+                        <dt data-i18n="stat1_label">of Peru's potato fields depend only on rain</dt>
+                        <dd><strong>90%</strong><a href="https://www.gob.pe/midagri" target="_blank" rel="noopener">MIDAGRI, 2023</a></dd>
+                    </div>
+                    <div class="stats-band__item">
+                        <dt data-i18n="stat2_label">yield lost to frost and drought in bad seasons</dt>
+                        <dd><strong data-i18n="stat2_value">up to 40%</strong><a href="https://www.gob.pe/midagri" target="_blank" rel="noopener">MIDAGRI, 2023</a></dd>
+                    </div>
+                    <div class="stats-band__item">
+                        <dt data-i18n="stat3_label">of growers receive technical assistance</dt>
+                        <dd><strong data-i18n="stat3_value">only 3.8%</strong><a href="https://m.inei.gob.pe/prensa/noticias/334-de-los-productores-agropecuarios-del-pais-son-mujeres-14486/" target="_blank" rel="noopener">INEI, ENA 2022</a></dd>
+                    </div>
+                    <div class="stats-band__item">
+                        <dt data-i18n="stat4_label">families live from coffee in Peru</dt>
+                        <dd><strong>223k+</strong><a href="https://juntadelcafe.org.pe/" target="_blank" rel="noopener">JNC, 2022</a></dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- 3. Solutions -->
         <section class="section solutions" id="solutions" aria-labelledby="solutions-title">
             <div class="container">
-                <p class="eyebrow" data-i18n="solutions_eyebrow">VALUE-GENERATING TECHNOLOGY</p>
-                <h2 class="section-title" id="solutions-title" data-i18n="solutions_title">Solutions & Features</h2>
+                <header class="section-heading">
+                    <p class="eyebrow" data-i18n="solutions_eyebrow">The solution</p>
+                    <h2 class="section-title" id="solutions-title" data-i18n="solutions_title">Four tools, one platform</h2>
+                    <p class="section-lead" data-i18n="solutions_desc">
+                        Simple and powerful tools to make better decisions in the field, built on open satellite data.
+                    </p>
+                </header>
 
-                <p class="section-description section-description--center" data-i18n="solutions_desc">
-                    Simple and powerful tools for better decision-making in the field.
-                </p>
+                <div class="filter" role="group" aria-labelledby="filter-label">
+                    <span class="filter__label" id="filter-label" data-i18n="filter_label">Show tools for:</span>
+                    <button class="chip is-active" type="button" data-filter="all" aria-pressed="true" data-i18n="filter_all">Everyone</button>
+                    <button class="chip" type="button" data-filter="farmer" aria-pressed="false" data-i18n="filter_farmer">Farmers</button>
+                    <button class="chip" type="button" data-filter="cooperative" aria-pressed="false" data-i18n="filter_cooperative">Cooperatives</button>
+                    <button class="chip" type="button" data-filter="advisor" aria-pressed="false" data-i18n="filter_advisor">Advisors</button>
+                </div>
+                <p class="visually-hidden" aria-live="polite" id="filter-status"></p>
+
                 <div class="solutions__grid">
-                    <article class="solution-card">
-                        <div class="solution-card__accent"></div>
-                        <div class="solution-card__head">
-                            <span class="solution-card__icon">
-                                <span class="material-symbols-outlined">book</span>
-                            </span>
-                            <span class="solution-card__pill"></span>
-                        </div>
-                        <h3 data-i18n="sol1_title">Satellite Vigor & Moisture Monitoring</h3>
-                        <p data-i18n="sol1_desc">
-                            Dashboard based on open satellite imagery to calculate vegetation indices (NDVI) and water
-                            stress without buying or installing physical ground hardware.
-                        </p>
-                        <div class="solution-card__result">
-                            <span class="material-symbols-outlined">bar_chart_4_bars</span>
-                            <span data-i18n="sol1_result">
-                                Reduces crop losses caused by undetected frosts and droughts by up to 25%.
-                            </span>
-                        </div>
+                    <article class="solution-card reveal" data-segments="farmer cooperative advisor">
+                        <span class="icon-badge"><span class="material-symbols-outlined" aria-hidden="true">satellite_alt</span></span>
+                        <h3 data-i18n="sol1_title">Satellite Vigor &amp; Moisture Monitoring</h3>
+                        <p data-i18n="sol1_desc">NDVI and NDWI maps of your plot from Sentinel-2 open imagery, updated about every 5 days, without buying or installing hardware.</p>
+                        <p class="solution-card__result"><span class="material-symbols-outlined" aria-hidden="true">trending_down</span><span data-i18n="sol1_result">Goal: cut losses from undetected frost and drought by 25%.</span></p>
                     </article>
-                    <article class="solution-card">
-                        <div class="solution-card__accent"></div>
-                        <div class="solution-card__head">
-                            <span class="solution-card__icon">
-                                <span class="material-symbols-outlined">book</span>
-                            </span>
-                            <span class="solution-card__pill"></span>
-                        </div>
+                    <article class="solution-card reveal" data-segments="farmer cooperative">
+                        <span class="icon-badge"><span class="material-symbols-outlined" aria-hidden="true">calculate</span></span>
                         <h3 data-i18n="sol2_title">Cost Accounting per Lot</h3>
-                        <p data-i18n="sol2_desc">
-                            Module to log day labor, agricultural inputs, and machinery in real time. Automatically
-                            calculates unit cost per quintal or ton and sets your financial break-even point.
-                        </p>
-                        <div class="solution-card__result">
-                            <span class="material-symbols-outlined">bar_chart_4_bars</span>
-                            <span data-i18n="sol2_result">
-                                Avoid selling at a loss to middlemen and consolidate field logbooks 50% faster.
-                            </span>
-                        </div>
+                        <p data-i18n="sol2_desc">Log day labor, inputs and freight in seconds. SumaqAgro calculates your cost per sack or quintal and the minimum price you should sell at.</p>
+                        <p class="solution-card__result"><span class="material-symbols-outlined" aria-hidden="true">trending_down</span><span data-i18n="sol2_result">Goal: consolidate field logbooks 50% faster.</span></p>
                     </article>
-                    <article class="solution-card">
-                        <div class="solution-card__accent"></div>
-                        <div class="solution-card__head">
-                            <span class="solution-card__icon">
-                                <span class="material-symbols-outlined">book</span>
-                            </span>
-                            <span class="solution-card__pill"></span>
-                        </div>
-                        <h3 data-i18n="sol3_title">Digital Harvest Quality Certification</h3>
-                        <p data-i18n="sol3_desc">
-                            Generates verifiable digital reports with potato size grading or coffee cup scores,
-                            protecting your yield from arbitrary price cuts at collection points.
-                        </p>
-                        <div class="solution-card__result">
-                            <span class="material-symbols-outlined">bar_chart_4_bars</span>
-                            <span data-i18n="sol3_result">
-                                Formal proof to negotiate price premiums in specialty and export markets.
-                            </span>
-                        </div>
+                    <article class="solution-card reveal" data-segments="cooperative">
+                        <span class="icon-badge"><span class="material-symbols-outlined" aria-hidden="true">qr_code_2</span></span>
+                        <h3 data-i18n="sol3_title">Digital Harvest Quality Certificate</h3>
+                        <p data-i18n="sol3_desc">Issue PDF certificates with potato size grading or coffee cup profile and a public QR code that any buyer can verify.</p>
+                        <p class="solution-card__result"><span class="material-symbols-outlined" aria-hidden="true">trending_up</span><span data-i18n="sol3_result">Formal proof to negotiate premiums in specialty and export markets.</span></p>
                     </article>
-                    <article class="solution-card">
-                        <div class="solution-card__accent"></div>
-                        <div class="solution-card__head">
-                            <span class="solution-card__icon">
-                                <span class="material-symbols-outlined">book</span>
-                            </span>
-                            <span class="solution-card__pill"></span>
-                        </div>
-                        <h3 data-i18n="sol4_title">Agronomic Prescriptions & Alerts</h3>
-                        <p data-i18n="sol4_desc">
-                            Centralized system for preventive technical advice and digital phytosanitary recipes to
-                            fight pests like coffee rust or Andean potato weevil.
-                        </p>
-                        <div class="solution-card__result">
-                            <span class="material-symbols-outlined">bar_chart_4_bars</span>
-                            <span data-i18n="sol4_result">
-                                Allows technical advisors to supervise 40% more hectares without constant travel.
-                            </span>
-                        </div>
+                    <article class="solution-card reveal" data-segments="farmer advisor">
+                        <span class="icon-badge"><span class="material-symbols-outlined" aria-hidden="true">notifications_active</span></span>
+                        <h3 data-i18n="sol4_title">Agronomic Prescriptions &amp; Alerts</h3>
+                        <p data-i18n="sol4_desc">Frost, pest and water-stress alerts with clear steps to follow, plus a channel to send pest photos and receive digital prescriptions.</p>
+                        <p class="solution-card__result"><span class="material-symbols-outlined" aria-hidden="true">trending_up</span><span data-i18n="sol4_result">Goal: advisors supervise 40% more hectares without extra trips.</span></p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="demo" id="demo" aria-labelledby="demo-title">
-            <div class="demo__overlay" aria-hidden="true"></div>
-            <div class="container demo__content">
-                <p class="eyebrow eyebrow--light" data-i18n="demo_eyebrow">PRODUCT DEMO</p>
-                <h2 class="section-title" id="demo-title" data-i18n="demo_title">See SumaqAgro in action</h2>
-                <p class="demo__subtitle" data-i18n="demo_subtitle">Demonstration Video</p>
-                <div class="demo-player" role="group" aria-label="Demonstration video player">
-                    <div class="demo-player__visual">
-                        <iframe class="demo-player__iframe"
-                            src="https://www.youtube-nocookie.com/embed/3RljjFEq9CU"
-                            title="SumaqAgro — About the Product" loading="lazy"
-                            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <!-- 4. How it works -->
+        <section class="section how" id="how-it-works" aria-labelledby="how-title">
+            <div class="container how__grid">
+                <div>
+                    <header class="section-heading section-heading--left">
+                        <p class="eyebrow" data-i18n="how_eyebrow">How it works</p>
+                        <h2 class="section-title" id="how-title" data-i18n="how_title">From your plot to a decision in 3 steps</h2>
+                    </header>
+                    <ol class="steps">
+                        <li class="step reveal">
+                            <span class="step__number" aria-hidden="true">1</span>
+                            <div>
+                                <h3 data-i18n="step1_title">Register your plot</h3>
+                                <p data-i18n="step1_desc">Draw its boundary on the map and tell us your crop: potato or coffee. It takes less than 5 minutes.</p>
+                            </div>
+                        </li>
+                        <li class="step reveal">
+                            <span class="step__number" aria-hidden="true">2</span>
+                            <div>
+                                <h3 data-i18n="step2_title">Get your satellite diagnosis</h3>
+                                <p data-i18n="step2_desc">See the vigor and moisture of your crop and receive alerts before frost, drought or pests hit.</p>
+                            </div>
+                        </li>
+                        <li class="step reveal">
+                            <span class="step__number" aria-hidden="true">3</span>
+                            <div>
+                                <h3 data-i18n="step3_title">Decide and sell better</h3>
+                                <p data-i18n="step3_desc">Log your expenses, know your break-even price and certify your harvest with a QR code before you sell.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <a class="button button--primary" href="#plans" data-i18n="how_cta">Register my plot for free</a>
+                </div>
+                <figure class="how__visual reveal">
+                    <div class="browser-frame">
+                        <div class="browser-frame__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                        <img src="public/assets/images/app-crop-health.webp" width="1200" height="602" loading="lazy"
+                            alt="Crop Health view: satellite map of a plot in Apurímac with NDVI 0.58 and NDWI 0.18 and a recommendation to consult the advisor"
+                            data-i18n-attr="alt:how_img_alt">
                     </div>
+                    <figcaption data-i18n="how_caption">Crop Health view of the SumaqAgro web app.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 5. Product demo -->
+        <section class="section demo" id="demo" aria-labelledby="demo-title">
+            <div class="container">
+                <header class="section-heading">
+                    <p class="eyebrow eyebrow--light" data-i18n="demo_eyebrow">Product demo</p>
+                    <h2 class="section-title" id="demo-title" data-i18n="demo_title">See SumaqAgro in action</h2>
+                    <p class="section-lead" data-i18n="demo_subtitle">A two-minute tour of the platform, from registering a plot to issuing a certificate.</p>
+                </header>
+                <div class="video" data-video-id="3RljjFEq9CU" data-video-title="SumaqAgro — About the Product">
+                    <img class="video__poster" src="https://i.ytimg.com/vi/3RljjFEq9CU/hqdefault.jpg" alt="" width="480" height="360" loading="lazy">
+                    <button class="video__play" type="button" aria-label="Play the SumaqAgro demo video" data-i18n-attr="aria-label:demo_play">
+                        <span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
+                    </button>
                 </div>
             </div>
         </section>
 
+        <!-- 6. Audience -->
+        <section class="section audience" id="audience" aria-labelledby="audience-title">
+            <div class="container">
+                <header class="section-heading">
+                    <p class="eyebrow" data-i18n="audience_eyebrow">Our community</p>
+                    <h2 class="section-title" id="audience-title" data-i18n="audience_title">Who do we help?</h2>
+                    <p class="section-lead" data-i18n="audience_desc">We work with those who make the country's food security possible. Find your profile.</p>
+                </header>
+
+                <div class="audience__grid">
+                    <article class="audience-card reveal">
+                        <img src="public/assets/images/audience-farmer.webp" alt="" width="739" height="415" loading="lazy">
+                        <div class="audience-card__body">
+                            <span class="tag" data-i18n="audience_tag1">Family farming</span>
+                            <h3 data-i18n="audience_card1_title">Independent farmers</h3>
+                            <ul class="check-list">
+                                <li data-i18n="audience_card1_b1">See the health of your plot without walking it</li>
+                                <li data-i18n="audience_card1_b2">Know your cost per sack and never sell at a loss</li>
+                                <li data-i18n="audience_card1_b3">Get frost and pest alerts on your phone</li>
+                            </ul>
+                            <p class="audience-card__plan" data-i18n="audience_card1_plan">Recommended: <strong>Seed Plan · Free</strong></p>
+                            <a class="button button--primary button--block" href="https://sumaqagro-appweb.web.app/demo-access?plan=seed" data-i18n="audience_card1_btn">Register my plot</a>
+                        </div>
+                    </article>
+                    <article class="audience-card reveal">
+                        <img src="public/assets/images/audience-cooperative.webp" alt="" width="768" height="399" loading="lazy">
+                        <div class="audience-card__body">
+                            <span class="tag" data-i18n="audience_tag2">Agricultural organizations</span>
+                            <h3 data-i18n="audience_card2_title">Cooperative leaders</h3>
+                            <ul class="check-list">
+                                <li data-i18n="audience_card2_b1">Consolidate the plots of up to 50 members</li>
+                                <li data-i18n="audience_card2_b2">Certify size and cup quality with a QR code</li>
+                                <li data-i18n="audience_card2_b3">Export reports for buyers and audits</li>
+                            </ul>
+                            <p class="audience-card__plan" data-i18n="audience_card2_plan">Recommended: <strong>Cooperative Pro</strong></p>
+                            <a class="button button--primary button--block" href="https://sumaqagro-appweb.web.app/demo-access?plan=cooperative" data-i18n="audience_card2_btn">Manage my cooperative</a>
+                        </div>
+                    </article>
+                    <article class="audience-card reveal">
+                        <img src="public/assets/images/audience-advisor.webp" alt="" width="800" height="538" loading="lazy">
+                        <div class="audience-card__body">
+                            <span class="tag" data-i18n="audience_tag3">Technical assistance</span>
+                            <h3 data-i18n="audience_card3_title">Technical advisors &amp; agronomists</h3>
+                            <ul class="check-list">
+                                <li data-i18n="audience_card3_b1">Supervise up to 20 farms from one screen</li>
+                                <li data-i18n="audience_card3_b2">Receive pest photos and send digital prescriptions</li>
+                                <li data-i18n="audience_card3_b3">Prioritize visits by risk level</li>
+                            </ul>
+                            <p class="audience-card__plan" data-i18n="audience_card3_plan">Recommended: <strong>Technical Advisor Plan</strong></p>
+                            <a class="button button--primary button--block" href="https://sumaqagro-appweb.web.app/demo-access?plan=advisor" data-i18n="audience_card3_btn">Join as an advisor</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Plans -->
         <section class="section pricing" id="plans" aria-labelledby="pricing-title">
             <div class="container">
-                <div class="pricing__heading">
-                    <p class="eyebrow" data-i18n="plans_eyebrow">PLANS</p>
-                    <h2 class="section-title" id="pricing-title" data-i18n="plans_title">
-                        Choose the plan that fits your needs
-                    </h2>
-                </div>
-                <div class="billing-wrapper">
-                    <div class="billing" role="group" aria-label="Billing period">
-                        <button class="billing__option is-active" type="button" data-billing="monthly"
-                            aria-pressed="true" data-i18n="plans_month">Month</button>
+                <header class="section-heading">
+                    <p class="eyebrow" data-i18n="plans_eyebrow">Plans</p>
+                    <h2 class="section-title" id="pricing-title" data-i18n="plans_title">Choose the plan that fits your needs</h2>
+                    <p class="section-lead" data-i18n="plans_desc">Start free and upgrade when your plot or your organization grows. Change or cancel anytime.</p>
+                </header>
 
-                        <button class="billing__option" type="button" data-billing="annual" aria-pressed="false"
-                            data-i18n="plans_year">Annual</button>
-
-                        <span class="billing__saving" data-billing="annual" role="button" tabindex="0"
-                            data-i18n="plans_saving">Save 2 months with the annual plan</span>
-                    </div>
+                <div class="billing" role="group" aria-label="Billing period" data-i18n-attr="aria-label:aria_billing">
+                    <button class="billing__option is-active" type="button" data-billing="monthly" aria-pressed="true" data-i18n="plans_month">Monthly</button>
+                    <button class="billing__option" type="button" data-billing="annual" aria-pressed="false">
+                        <span data-i18n="plans_year">Annual</span>
+                        <span class="billing__saving" data-i18n="plans_saving">2 months free</span>
+                    </button>
                 </div>
+
                 <div class="pricing__grid">
-                    <article class="pricing-card">
-                        <div class="pricing-card__header">
-                            <h3 data-i18n="plan1_name">Seed Plan</h3>
-                        </div>
-                        <p class="pricing-card__price">
-                            <strong class="price-val" data-monthly="S/0" data-annual="S/0">S/0</strong>
-                        </p>
-                        <p class="pricing-card__description" data-i18n="plan1_desc">
-                            1 plot, basic NDVI, and day labor logging.
-                        </p>
-                        <a class="button pricing-card__button" href="/app/register" data-i18n="plan1_btn">
-                            Start for free
-                        </a>
+                    <article class="pricing-card reveal">
+                        <h3 data-i18n="plan1_name">Seed Plan</h3>
+                        <p class="pricing-card__audience" data-i18n="plan1_audience">For independent farmers</p>
+                        <p class="pricing-card__price"><strong>S/0</strong> <span data-i18n="plan1_forever">forever</span></p>
+                        <ul class="check-list">
+                            <li data-i18n="plan1_f1">1 registered plot</li>
+                            <li data-i18n="plan1_f2">Basic NDVI vigor map</li>
+                            <li data-i18n="plan1_f3">Expense and day-labor log</li>
+                            <li data-i18n="plan1_f4">Break-even price per sack</li>
+                            <li data-i18n="plan1_f5">Frost and drought alerts</li>
+                        </ul>
+                        <a class="button button--outline button--block" href="https://sumaqagro-appweb.web.app/demo-access?plan=seed" data-i18n="plan1_btn">Start for free</a>
                     </article>
-                    <article class="pricing-card pricing-card--featured">
-                        <div class="pricing-card__header">
-                            <h3 data-i18n="plan2_name">Cooperative Pro</h3>
-                            <span class="badge" data-i18n="plan2_badge">Most popular</span>
-                        </div>
+
+                    <article class="pricing-card pricing-card--featured reveal">
+                        <span class="badge" data-i18n="plan2_badge">Most popular</span>
+                        <h3 data-i18n="plan2_name">Cooperative Pro</h3>
+                        <p class="pricing-card__audience" data-i18n="plan2_audience">For cooperatives and associations</p>
                         <p class="pricing-card__price">
                             <strong class="price-val" data-monthly="S/189" data-annual="S/1,890">S/189</strong>
-                            <small class="price-period" data-monthly="/month" data-annual="/year"
-                                data-i18n="plans_month_suffix">/month</small>
+                            <span class="price-period" data-period>/month</span>
                         </p>
-                        <p class="pricing-card__description" data-i18n="plan2_desc">
-                            50 farmers, size and variety certification, report export.
-                        </p>
-                        <a class="button pricing-card__button pricing-card__button--primary" href="/app/register"
-                            data-i18n="plan2_btn">Subscribe cooperative</a>
+                        <p class="pricing-card__note" data-annual-note hidden data-i18n="plan2_annual_note">Equals S/157.50 per month</p>
+                        <ul class="check-list">
+                            <li data-i18n="plan2_f1">Up to 50 producers</li>
+                            <li data-i18n="plan2_f2">NDVI and NDWI moisture maps</li>
+                            <li data-i18n="plan2_f3">QR quality certificates (size and cup)</li>
+                            <li data-i18n="plan2_f4">Consolidated dashboard per lot</li>
+                            <li data-i18n="plan2_f5">PDF and Excel report export</li>
+                        </ul>
+                        <a class="button button--primary button--block" href="https://sumaqagro-appweb.web.app/demo-access?plan=cooperative" data-i18n="plan2_btn">Subscribe my cooperative</a>
                     </article>
-                    <article class="pricing-card">
-                        <div class="pricing-card__header">
-                            <h3 data-i18n="plan3_name">Technical Advisor Plan</h3>
-                        </div>
+
+                    <article class="pricing-card reveal">
+                        <h3 data-i18n="plan3_name">Technical Advisor Plan</h3>
+                        <p class="pricing-card__audience" data-i18n="plan3_audience">For agronomists and field advisors</p>
                         <p class="pricing-card__price">
                             <strong class="price-val" data-monthly="S/89" data-annual="S/890">S/89</strong>
-                            <small class="price-period" data-monthly="/month" data-annual="/year"
-                                data-i18n="plans_month_suffix">/month</small>
+                            <span class="price-period" data-period>/month</span>
                         </p>
-                        <p class="pricing-card__description" data-i18n="plan3_desc">
-                            20 supervised farms, technical recipes, and advanced NDVI.
-                        </p>
-                        <a class="button pricing-card__button" href="/app/register" data-i18n="plan3_btn">
-                            14-day free trial
-                        </a>
+                        <p class="pricing-card__note" data-annual-note hidden data-i18n="plan3_annual_note">Equals S/74.17 per month</p>
+                        <ul class="check-list">
+                            <li data-i18n="plan3_f1">Up to 20 supervised farms</li>
+                            <li data-i18n="plan3_f2">Advanced NDVI and NDWI</li>
+                            <li data-i18n="plan3_f3">Digital phytosanitary prescriptions</li>
+                            <li data-i18n="plan3_f4">Pest photo inbox from farmers</li>
+                            <li data-i18n="plan3_f5">Alerts prioritized by risk</li>
+                        </ul>
+                        <a class="button button--outline button--block" href="https://sumaqagro-appweb.web.app/demo-access?plan=advisor" data-i18n="plan3_btn">Try free for 14 days</a>
                     </article>
                 </div>
+                <p class="pricing__footnote" data-i18n="plans_footnote">Prices in Peruvian soles (PEN). Questions about your cooperative? <a href="mailto:contacto@sumaqagro.pe">Write to us</a>.</p>
             </div>
         </section>
 
+        <!-- 8. Impact + testimonials -->
         <section class="section impact" id="impact" aria-labelledby="impact-title">
             <div class="container">
-                <p class="eyebrow" data-i18n="impact_eyebrow">REAL RESULTS</p>
-                <h2 class="section-title" id="impact-title" data-i18n="impact_title">Impact</h2>
-                <p class="section-lead" data-i18n="impact_lead">
-                    Metrics supporting our commitment to smallholder farmers and testimonials from those who already
-                    trust SumaqAgro.
-                </p>
+                <header class="section-heading">
+                    <p class="eyebrow" data-i18n="impact_eyebrow">Real results</p>
+                    <h2 class="section-title" id="impact-title" data-i18n="impact_title">The impact we are working for</h2>
+                    <p class="section-lead" data-i18n="impact_lead">Measurable goals we validate with every grower, cooperative and advisor who uses SumaqAgro.</p>
+                </header>
 
-                <div class="impact__grid">
-                    <article class="impact-card">
-                        <span class="impact-card__icon">
-                            <span class="material-symbols-outlined">add</span>
-                        </span>
-                        <h3 data-i18n="impact_stat1">Hectares of potato</h3>
-                        <strong>333k</strong>
-                        <span></span>
-                    </article>
-                    <article class="impact-card">
-                        <span class="impact-card__icon">
-                            <span class="material-symbols-outlined">add</span>
-                        </span>
-                        <h3 data-i18n="impact_stat2">Coffee families</h3>
-                        <strong>223k</strong>
-                        <span></span>
-                    </article>
-                    <article class="impact-card">
-                        <span class="impact-card__icon">
-                            <span class="material-symbols-outlined">add</span>
-                        </span>
-                        <h3 data-i18n="impact_stat3">Without technical support</h3>
-                        <strong>&gt;40%</strong>
-                        <span></span>
-                    </article>
+                <dl class="impact__grid">
+                    <div class="impact-card reveal">
+                        <dt data-i18n="impact_stat1">crop losses from late-detected frost and drought</dt>
+                        <dd><span class="counter" data-count="25" data-prefix="-" data-suffix="%">-25%</span></dd>
+                    </div>
+                    <div class="impact-card reveal">
+                        <dt data-i18n="impact_stat2">less time consolidating cooperative logbooks</dt>
+                        <dd><span class="counter" data-count="50" data-suffix="%">50%</span></dd>
+                    </div>
+                    <div class="impact-card reveal">
+                        <dt data-i18n="impact_stat3">hectares supervised per technical advisor</dt>
+                        <dd><span class="counter" data-count="40" data-prefix="+" data-suffix="%">+40%</span></dd>
+                    </div>
+                    <div class="impact-card reveal">
+                        <dt data-i18n="impact_stat4">sensors to buy or install in your field</dt>
+                        <dd><span class="counter" data-count="0">0</span></dd>
+                    </div>
+                </dl>
+
+                <div class="testimonials" aria-labelledby="testimonials-title">
+                    <div class="testimonials__head">
+                        <h3 class="testimonials__title" id="testimonials-title" data-i18n="testimonials_title">What our users say</h3>
+                        <div class="carousel-controls">
+                            <button class="icon-button" type="button" data-carousel="prev" aria-label="Previous testimonial" data-i18n-attr="aria-label:aria_prev">
+                                <span class="material-symbols-outlined" aria-hidden="true">chevron_left</span>
+                            </button>
+                            <button class="icon-button" type="button" data-carousel="next" aria-label="Next testimonial" data-i18n-attr="aria-label:aria_next">
+                                <span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                    <ul class="testimonials__track" tabindex="0" aria-label="Testimonials" data-i18n-attr="aria-label:aria_testimonials">
+                        <li class="testimonial-card">
+                            <div class="stars" role="img" aria-label="5 out of 5 stars" data-i18n-attr="aria-label:aria_stars">★★★★★</div>
+                            <blockquote data-i18n="quote1">“Now I know when to irrigate and how much each sack of potatoes costs me. I no longer sell blind.”</blockquote>
+                            <div class="testimonial-card__author">
+                                <img src="public/assets/images/testimonial-juan.webp" alt="" width="56" height="56" loading="lazy">
+                                <p><strong>Juan Huamán</strong><span data-i18n="author1">Potato farmer · Junín</span></p>
+                            </div>
+                        </li>
+                        <li class="testimonial-card">
+                            <div class="stars" role="img" aria-label="5 out of 5 stars" data-i18n-attr="aria-label:aria_stars">★★★★★</div>
+                            <blockquote data-i18n="quote2">“The digital certificate with QR opened better export prices for our members' coffee.”</blockquote>
+                            <div class="testimonial-card__author">
+                                <img src="public/assets/images/testimonial-elena.webp" alt="" width="56" height="56" loading="lazy">
+                                <p><strong>Elena Vargas</strong><span data-i18n="author2">Coffee cooperative · San Martín</span></p>
+                            </div>
+                        </li>
+                        <li class="testimonial-card">
+                            <div class="stars" role="img" aria-label="5 out of 5 stars" data-i18n-attr="aria-label:aria_stars">★★★★★</div>
+                            <blockquote data-i18n="quote3">“I review the vigor of all my farms before leaving home and only travel to the ones that need me.”</blockquote>
+                            <div class="testimonial-card__author">
+                                <span class="avatar" aria-hidden="true">RQ</span>
+                                <p><strong>Rosa Quispe</strong><span data-i18n="author3">Agronomist advisor · Cusco</span></p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="section testimonials" aria-labelledby="testimonials-title">
+        <!-- 9. About us + team -->
+        <section class="section about" id="about" aria-labelledby="about-title">
             <div class="container">
-                <p class="eyebrow" data-i18n="testimonials_eyebrow">VOICES THAT INSPIRE US</p>
-                <h2 class="section-title" id="testimonials-title" data-i18n="testimonials_title">
-                    What our users say
-                </h2>
-                <div class="testimonials__rule" aria-hidden="true"><span></span></div>
-                <div class="testimonials__grid">
-                    <article class="testimonial-card">
-                        <div class="testimonial-card__top">
-                            <img class="testimonial-card__avatar" src="public/assets/images/testimonial-juan.png"
-                                alt="Portrait of Juan Huamán" width="100" height="100">
-                            <div class="stars" aria-label="5 out of 5 stars">
-                                <span class="material-symbols-outlined star-icon">star</span>
-                                <span class="material-symbols-outlined star-icon">star</span>
-                                <span class="material-symbols-outlined star-icon">star</span>
-                                <span class="material-symbols-outlined star-icon">star</span>
-                                <span class="material-symbols-outlined star-icon">star</span>
+                <div class="about__grid">
+                    <div>
+                        <header class="section-heading section-heading--left">
+                            <p class="eyebrow" data-i18n="about_eyebrow">About SumaqAgro</p>
+                            <h2 class="section-title" id="about-title" data-i18n="about_title">Democratizing precision agriculture in Peru</h2>
+                        </header>
+                        <p data-i18n="about_desc"><strong>SumaqAgro</strong> is built by <strong>Dymbia</strong>, a Peruvian startup that closes the technology gap in potato and coffee regions. We turn open satellite imagery and agronomic data into accessible tools so growers and organizations make technically supported decisions.</p>
+                        <div class="about__pillars">
+                            <div>
+                                <h3 data-i18n="about_mission_title">Mission</h3>
+                                <p data-i18n="about_mission">Help growers reduce losses from extreme weather, manage their farms profitably and prove the value of their harvest.</p>
+                            </div>
+                            <div>
+                                <h3 data-i18n="about_vision_title">Vision</h3>
+                                <p data-i18n="about_vision">Be the leading platform for satellite agronomic analytics and digital certification in the Andean valleys and high jungle of Peru.</p>
                             </div>
                         </div>
-                        <blockquote data-i18n="quote1">
-                            “Now I know when to irrigate and how much each bag of potatoes costs me.”
-                        </blockquote>
-                        <p data-i18n="author1">Juan Huamán, potato farmer</p>
-                    </article>
-                    <article class="testimonial-card">
-                        <div class="testimonial-card__top">
-                            <img class="testimonial-card__avatar" src="public/assets/images/testimonial-elena.png"
-                                alt="Portrait of Elena Vargas" width="100" height="100">
-                            <div class="stars" aria-label="5 out of 5 stars">
-                                <span class="material-symbols-outlined star-icon">star</span>
-                                <span class="material-symbols-outlined star-icon">star</span>
-                                <span class="material-symbols-outlined star-icon">star</span>
-                                <span class="material-symbols-outlined star-icon">star</span>
-                                <span class="material-symbols-outlined star-icon">star</span>
-                            </div>
-                        </div>
-                        <blockquote data-i18n="quote2">
-                            “Digital certification opened up better export prices for us.”
-                        </blockquote>
-                        <p data-i18n="author2">Elena Vargas, coffee cooperative</p>
-                    </article>
+                    </div>
+                    <img class="about__image reveal" src="public/assets/images/about-farm.webp" width="720" height="357" loading="lazy"
+                        alt="A hand holding a phone with crop metrics in front of an irrigated field" data-i18n-attr="alt:about_img_alt">
                 </div>
-            </div>
-        </section>
 
-        <section class="section team" id="team" aria-labelledby="team-title">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow" data-i18n="team_eyebrow">THE PEOPLE BEHIND THE TECHNOLOGY</p>
-                    <h2 class="section-title" id="team-title" data-i18n="team_title">Our Team</h2>
-                    <br>
-                    <p class="section-description" data-i18n="team_desc">
-                        Five professionals committed to bringing precision agriculture to those who cultivate the future
-                        of Peru.
-                    </p>
-                </div>
-                <div class="team__grid">
-                    <article class="team-card">
-                        <img src="public/assets/images/solorzano-benjamin.jpeg" alt="Benjamin Solorzano Sullca"
-                            width="320" height="360">
-                        <div>
-                            <h3 data-i18n="team_member1">Solorzano Sullca, Benjamin</h3>
-                            <p data-i18n="team_role1">Domain Analyst / Requirements Lead</p>
-                        </div>
-                    </article>
-                    <article class="team-card">
-                        <img src="public/assets/images/tejada-yamil.png" alt="Yamil Jared Tejada Pumacayo" width="320"
-                            height="360">
-                        <div>
-                            <h3 data-i18n="team_member2">Tejada Pumacayo, Yamil Jared</h3>
+                <div class="team" id="team" aria-labelledby="team-title">
+                    <header class="section-heading">
+                        <p class="eyebrow" data-i18n="team_eyebrow">The people behind the technology</p>
+                        <h3 class="section-title section-title--sm" id="team-title" data-i18n="team_title">Our team</h3>
+                        <p class="section-lead" data-i18n="team_desc">Five Software Engineering students at UPC committed to bringing precision agriculture to those who cultivate the future of Peru.</p>
+                    </header>
+                    <ul class="team__grid">
+                        <li class="team-card reveal">
+                            <img src="public/assets/images/tejada-yamil.webp" alt="Portrait of Yamil Jared Tejada Pumacayo" width="400" height="400" loading="lazy">
+                            <h4>Yamil Tejada</h4>
                             <p data-i18n="team_role2">Team Leader / Scrum Master</p>
-                        </div>
-                    </article>
-                    <article class="team-card">
-                        <img src="public/assets/images/vargas-jose.jpeg" alt="Jose Carlos Vargas Enriquez" width="320"
-                            height="360">
-                        <div>
-                            <h3 data-i18n="team_member3">Vargas Enriquez, Jose Carlos</h3>
-                            <p data-i18n="team_role3">UX/UI Designer / Product Designer</p>
-                        </div>
-                    </article>
-                    <article class="team-card">
-                        <img src="public/assets/images/sanca-miguel.png" alt="Miguel Sanca Condori" width="320"
-                            height="360">
-                        <div>
-                            <h3 data-i18n="team_member4">Sanca Condori, Miguel</h3>
-                            <p data-i18n="team_role4">Software Architect</p>
-                        </div>
-                    </article>
-                    <article class="team-card">
-                        <img src="public/assets/images/duarte-drago.png" alt="Drago Derick Duarte Ruffner" width="320"
-                            height="360">
-                        <div>
-                            <h3 data-i18n="team_member5">Duarte Ruffner, Drago Derick</h3>
+                            <a class="team-card__link" href="https://github.com/dymbia-opensource" target="_blank" rel="noopener" aria-label="Yamil Tejada on GitHub (opens in a new tab)">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+                            </a>
+                        </li>
+                        <li class="team-card reveal">
+                            <img src="public/assets/images/duarte-drago.webp" alt="Portrait of Drago Derick Duarte Ruffner" width="480" height="480" loading="lazy">
+                            <h4>Drago Duarte</h4>
                             <p data-i18n="team_role5">Product Owner</p>
-                        </div>
-                    </article>
+                            <a class="team-card__link" href="https://github.com/dymbia-opensource" target="_blank" rel="noopener" aria-label="Drago Duarte on GitHub (opens in a new tab)">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+                            </a>
+                        </li>
+                        <li class="team-card reveal">
+                            <img src="public/assets/images/sanca-miguel.webp" alt="Portrait of Miguel Sanca Condori" width="480" height="480" loading="lazy">
+                            <h4>Miguel Sanca</h4>
+                            <p data-i18n="team_role4">Software Architect</p>
+                            <a class="team-card__link" href="https://github.com/dymbia-opensource" target="_blank" rel="noopener" aria-label="Miguel Sanca on GitHub (opens in a new tab)">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+                            </a>
+                        </li>
+                        <li class="team-card reveal">
+                            <img src="public/assets/images/vargas-jose.webp" alt="Portrait of Jose Carlos Vargas Enriquez" width="480" height="480" loading="lazy">
+                            <h4>Jose Vargas</h4>
+                            <p data-i18n="team_role3">UX/UI Designer</p>
+                            <a class="team-card__link" href="https://github.com/dymbia-opensource" target="_blank" rel="noopener" aria-label="Jose Vargas on GitHub (opens in a new tab)">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+                            </a>
+                        </li>
+                        <li class="team-card reveal">
+                            <img src="public/assets/images/solorzano-benjamin.webp" alt="Portrait of Benjamin Solorzano Sullca" width="480" height="643" loading="lazy">
+                            <h4>Benjamin Solorzano</h4>
+                            <p data-i18n="team_role1">Domain Analyst</p>
+                            <a class="team-card__link" href="https://github.com/dymbia-opensource" target="_blank" rel="noopener" aria-label="Benjamin Solorzano on GitHub (opens in a new tab)">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </section>
 
-        <section class="demo demo--about-team" id="about-team" aria-labelledby="about-team-title">
-            <div class="demo__overlay" aria-hidden="true"></div>
-            <div class="container demo__content">
-                <p class="eyebrow eyebrow--light" data-i18n="about_team_video_eyebrow">Video About the Team</p>
-                <h2 class="section-title" id="about-team-title" data-i18n="about_team_video_title">Video About the Team
-                </h2>
-                <p class="demo__subtitle" data-i18n="about_team_video_subtitle">Introduction to the team, roles, and
-                    responsibilities assumed during the development of SumaqAgro.</p>
-                <div class="demo-player" role="group" aria-label="Demonstration video player">
-                    <div class="demo-player__visual">
-                        <span class="demo-player__label" data-i18n="about_team_video_label">Technology applied to
-                            fields</span>
-                        <button class="demo-player__play" type="button" aria-label="Play demonstration video"
-                            aria-describedby="about-team-status">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M8.5 6.2v11.6L18 12 8.5 6.2Z" />
-                            </svg>
+                <div class="team-video" id="about-team" aria-labelledby="about-team-title">
+                    <div class="team-video__copy">
+                        <p class="eyebrow" data-i18n="about_team_video_eyebrow">Video about the team</p>
+                        <h3 class="section-title section-title--sm" id="about-team-title" data-i18n="about_team_video_title">Meet Dymbia</h3>
+                        <p data-i18n="about_team_video_subtitle">Who we are, the roles we took on and how we built SumaqAgro during the course.</p>
+                    </div>
+                    <div class="video video--compact" data-video-id="" data-video-title="Dymbia — About the Team">
+                        <img class="video__poster" src="public/assets/images/about-farm.webp" alt="" width="720" height="357" loading="lazy">
+                        <button class="video__play" type="button" aria-label="Play the team video" data-i18n-attr="aria-label:about_team_video_play">
+                            <span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
                         </button>
-                        <p class="demo-player__status" id="about-team-status" aria-live="polite"
-                            data-i18n="about_team_video_status">
-                            Play an overview video of SumaqAgro
-                        </p>
+                        <p class="video__soon" data-i18n="about_team_video_soon">Video coming soon</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta" id="cta" aria-labelledby="cta-title">
-            <div class="container">
-                <h2 id="cta-title" data-i18n="cta_title">Start making precise decisions today</h2>
-                <p data-i18n="cta_desc">
-                    Join a community cultivating a better future through technology.
-                </p>
-                <a class="button button--cta" href="/app/register" data-i18n="cta_button">Register for free</a>
+        <!-- 10. FAQ -->
+        <section class="section faq" id="faq" aria-labelledby="faq-title">
+            <div class="container faq__grid">
+                <header class="section-heading section-heading--left">
+                    <p class="eyebrow" data-i18n="faq_eyebrow">Frequently asked questions</p>
+                    <h2 class="section-title" id="faq-title" data-i18n="faq_title">Before you start</h2>
+                    <p class="section-lead" data-i18n="faq_desc">Can't find your answer? <a href="mailto:contacto@sumaqagro.pe">Write to us</a> and we will reply within one business day.</p>
+                </header>
+                <div class="faq__list">
+                    <details class="faq-item" open>
+                        <summary data-i18n="faq1_q">Do I need to buy sensors or drones?</summary>
+                        <p data-i18n="faq1_a">No. SumaqAgro works only with open satellite imagery (Sentinel-2) and the data you log. You only need a phone or a computer with internet.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq2_q">Does it work with poor signal in the field?</summary>
+                        <p data-i18n="faq2_a">Yes. With offline mode you can log expenses and reports without connection; they sync automatically when you get signal again.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq3_q">Which crops are supported?</summary>
+                        <p data-i18n="faq3_a">We currently focus on Andean potato and specialty coffee, including potato size grading and coffee cup profiles for certificates.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq4_q">How often is the satellite map updated?</summary>
+                        <p data-i18n="faq4_a">Sentinel-2 revisits each area about every 5 days. On very cloudy days the image may take longer, and we always show the capture date.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq5_q">Is the Seed Plan really free?</summary>
+                        <p data-i18n="faq5_a">Yes. You can register one plot at no cost and move to a paid plan only when you need more plots, members or certificates.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq6_q">Who can see my plot and cost data?</summary>
+                        <p data-i18n="faq6_a">Only you and the people you invite, such as your cooperative or advisor. We do not sell personal data. Read our <a href="public/sections/policy.html" data-legal>Privacy Policy</a>.</p>
+                    </details>
+                </div>
             </div>
         </section>
 
+        <!-- 11. Final CTA: plan finder -->
+        <section class="cta" id="cta" aria-labelledby="cta-title">
+            <div class="container cta__grid">
+                <div class="cta__copy">
+                    <h2 id="cta-title" data-i18n="cta_title">Start making precise decisions today</h2>
+                    <p data-i18n="cta_desc">Tell us who you are and we will recommend the right plan. Setting up your first plot takes less than 5 minutes.</p>
+                </div>
+                <form class="plan-finder" action="https://sumaqagro-appweb.web.app/demo-access" method="get">
+                    <fieldset>
+                        <legend data-i18n="finder_legend">I am a…</legend>
+                        <label class="plan-finder__option">
+                            <input type="radio" name="plan" value="seed" checked>
+                            <span class="material-symbols-outlined" aria-hidden="true">agriculture</span>
+                            <span data-i18n="finder_farmer">Farmer</span>
+                        </label>
+                        <label class="plan-finder__option">
+                            <input type="radio" name="plan" value="cooperative">
+                            <span class="material-symbols-outlined" aria-hidden="true">groups</span>
+                            <span data-i18n="finder_cooperative">Cooperative</span>
+                        </label>
+                        <label class="plan-finder__option">
+                            <input type="radio" name="plan" value="advisor">
+                            <span class="material-symbols-outlined" aria-hidden="true">engineering</span>
+                            <span data-i18n="finder_advisor">Advisor</span>
+                        </label>
+                    </fieldset>
+                    <p class="plan-finder__result" aria-live="polite">
+                        <span data-i18n="finder_result">Your plan:</span>
+                        <strong data-finder-plan>Seed Plan · S/0</strong>
+                    </p>
+                    <button class="button button--accent button--block button--large" type="submit" data-finder-cta>Create my free account</button>
+                    <p class="plan-finder__note" data-i18n="finder_note">No credit card required for the Seed Plan.</p>
+                </form>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer__grid">
             <div class="footer__brand">
-                <img src="public/assets/images/footer-logo.png" alt="SumaqAgro" width="101" height="93">
-                <p data-i18n="footer_desc">Leading provider of agricultural solutions for sustainable and profitable
-                    farming.</p>
-                <div class="social-links" aria-label="Social media">
-                    <a href="#" aria-label="X"><img src="public/assets/images/social-1.png" alt="" width="58"
-                            height="53"></a>
-                    <a href="#" aria-label="YouTube"><img src="public/assets/images/social-2.png" alt="" width="58"
-                            height="53"></a>
-                    <a href="#" aria-label="LinkedIn"><img src="public/assets/images/social-3.png" alt="" width="58"
-                            height="53"></a>
-                    <a href="#" aria-label="Instagram"><img src="public/assets/images/social-4.png" alt="" width="58"
-                            height="53"></a>
-                    <a href="#" aria-label="Google"><img src="public/assets/images/social-5.png" alt="" width="58"
-                            height="53"></a>
-                </div>
+                <a class="brand brand--light" href="#hero" aria-label="SumaqAgro, home">
+                    <img src="public/assets/images/footer-logo.png" alt="" width="48" height="44">
+                    <span class="brand__name">Sumaq<span>Agro</span></span>
+                </a>
+                <p data-i18n="footer_desc">Satellite monitoring, cost control and quality certification for Peruvian potato and coffee growers. A Dymbia product.</p>
+                <ul class="social-links">
+                    <li><a href="https://github.com/dymbia-opensource" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></li>
+                    <li><a href="https://www.youtube.com/watch?v=3RljjFEq9CU" target="_blank" rel="noopener" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg></a></li>
+                    <li><a href="mailto:contacto@sumaqagro.pe" aria-label="Email">
+                        <span class="material-symbols-outlined" aria-hidden="true">mail</span></a></li>
+                </ul>
             </div>
-            <div class="footer__column">
-                <h2 data-i18n="footer_col1_title">Products</h2>
-                <a href="#solutions" data-i18n="footer_col1_l1">Smart Irrigation Systems</a>
-                <a href="#solutions" data-i18n="footer_col1_l2">Soil Quality Sensors</a>
-                <a href="#solutions" data-i18n="footer_col1_l3">Drone Crop Monitoring</a>
-                <a href="#solutions" data-i18n="footer_col1_l4">Automated Harvesting</a>
-                <a href="#solutions" data-i18n="footer_col1_l5">Farm Management Software</a>
-            </div>
-            <div class="footer__column">
-                <h2 data-i18n="footer_col2_title">Quick Links</h2>
-                <a href="#about" data-i18n="footer_col2_l1">About Us</a>
-                <a href="#solutions" data-i18n="footer_col2_l2">Our Solutions</a>
-                <a href="#testimonials-title" data-i18n="footer_col2_l3">Case Studies</a>
-                <a href="#impact" data-i18n="footer_col2_l4">Sustainability</a>
-                <a href="#home" data-i18n="footer_col2_l5">News &amp; Insights</a>
-            </div>
-            <div class="footer__column">
-                <h2 data-i18n="footer_col3_title">Support</h2>
-                <a href="#home" data-i18n="footer_col3_l1">Help Center</a>
-                <a href="/app/register" data-i18n="footer_col3_l2">Contact Us</a>
-                <a href="#home" data-i18n="footer_col3_l3">Documentation</a>
-                <a href="#home" data-i18n="footer_col3_l4">System Status</a>
-                <a href="/app/register" data-i18n="footer_col3_l5">Request Demo</a>
-            </div>
+            <nav class="footer__column" aria-labelledby="footer-product">
+                <h2 id="footer-product" data-i18n="footer_col1_title">Product</h2>
+                <a href="#solutions" data-i18n="footer_col1_l1">Satellite monitoring</a>
+                <a href="#solutions" data-i18n="footer_col1_l2">Cost per lot</a>
+                <a href="#solutions" data-i18n="footer_col1_l3">Quality certificates</a>
+                <a href="#solutions" data-i18n="footer_col1_l4">Alerts and prescriptions</a>
+                <a href="#plans" data-i18n="nav_plans">Plans</a>
+            </nav>
+            <nav class="footer__column" aria-labelledby="footer-company">
+                <h2 id="footer-company" data-i18n="footer_col2_title">Company</h2>
+                <a href="#about" data-i18n="nav_about">About Us</a>
+                <a href="#team" data-i18n="team_title">Our team</a>
+                <a href="#impact" data-i18n="nav_impact">Impact</a>
+                <a href="https://github.com/dymbia-opensource" target="_blank" rel="noopener" data-i18n="footer_col2_l4">Open source</a>
+            </nav>
+            <nav class="footer__column" aria-labelledby="footer-support">
+                <h2 id="footer-support" data-i18n="footer_col3_title">Support</h2>
+                <a href="#faq" data-i18n="footer_col3_l1">FAQ</a>
+                <a href="mailto:contacto@sumaqagro.pe" data-i18n="footer_col3_l2">Contact us</a>
+                <a href="#demo" data-i18n="footer_col3_l3">Product demo</a>
+                <a href="https://sumaqagro-appweb.web.app/demo-access" data-i18n="nav_login">Sign In</a>
+            </nav>
         </div>
         <div class="container footer__bottom">
-            <p>© 2026 SumaqAgro Solutions. All rights reserved.</p>
-            <div>
-                <a href="public/sections/policy.html" data-i18n="footer_privacy">Privacy Policy</a>
-                <a href="public/sections/service.html" data-i18n="footer_terms">Terms of Service</a>
-                <a href="public/sections/cookie.html" data-i18n="footer_cookie">Cookie Policy</a>
+            <p>© <span data-year>2026</span> Dymbia · SumaqAgro. <span data-i18n="footer_rights">All rights reserved.</span></p>
+            <div class="footer__legal">
+                <a href="public/sections/policy.html" data-legal data-i18n="footer_privacy">Privacy Policy</a>
+                <a href="public/sections/service.html" data-legal data-i18n="footer_terms">Terms of Service</a>
+                <a href="public/sections/cookie.html" data-legal data-i18n="footer_cookie">Cookie Policy</a>
             </div>
         </div>
     </footer>
 
-    <script src="public/assets/js/i18n/es.js"></script>
-    <script src="public/assets/js/i18n/en.js"></script>
-    <script src="public/assets/js/script.js"></script>
+    <!-- Legal documents open in a modal (US-09); links fall back to the full page -->
+    <dialog class="legal-dialog" aria-labelledby="legal-dialog-title">
+        <div class="legal-dialog__header">
+            <h2 id="legal-dialog-title"></h2>
+            <button class="icon-button" type="button" data-dialog-close aria-label="Close" data-i18n-attr="aria-label:aria_close">
+                <span class="material-symbols-outlined" aria-hidden="true">close</span>
+            </button>
+        </div>
+        <div class="legal-dialog__body"></div>
+    </dialog>
+
+    <script src="public/assets/js/i18n/es.js" defer></script>
+    <script src="public/assets/js/i18n/en.js" defer></script>
+    <script src="public/assets/js/script.js" defer></script>
 
 </body>
 
