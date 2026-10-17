@@ -1416,6 +1416,7 @@ p a,
     border: 1px solid var(--color-border);
     border-radius: var(--radius-pill);
     background: #fff;
+    max-width: 100%;
 }
 
 .billing__option {
@@ -1428,6 +1429,9 @@ p a,
     color: var(--color-muted);
     font-weight: 600;
     transition: background-color .2s, color .2s;
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .billing__option.is-active {
@@ -1442,6 +1446,7 @@ p a,
     background: var(--color-accent);
     font-size: .75rem;
     font-weight: 700;
+    text-align: center;
 }
 
 .pricing__grid {
@@ -1460,6 +1465,7 @@ p a,
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     background: #fff;
+    min-width: 0;
 }
 
 .pricing-card h3 {
@@ -1474,6 +1480,7 @@ p a,
 
 .pricing-card__price {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     gap: .375rem;
     color: var(--color-muted);
@@ -1493,6 +1500,39 @@ p a,
     color: var(--color-secondary);
     font-size: .875rem;
     font-weight: 600;
+}
+
+.pricing-card__capacity-note {
+    color: var(--color-muted);
+    font-size: .875rem;
+}
+
+.pricing-card__summary {
+    color: var(--color-primary-dark);
+    font-weight: 500;
+    font-size: .9375rem;
+}
+
+.pricing-card .button,
+.audience-card .button,
+.plan-finder .button {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.pricing-card--featured .badge {
+    max-width: calc(100% - 1rem);
+    width: max-content;
+    white-space: normal;
+    text-align: center;
+}
+
+.pricing-card--featured .pricing-card__capacity-note {
+    color: rgba(255, 255, 255, .85);
+}
+
+.pricing-card--featured .pricing-card__summary {
+    color: var(--color-accent);
 }
 
 .pricing-card .check-list {
@@ -2455,6 +2495,19 @@ p a,
 
 /* Extra small (≤ 576px) */
 @media (max-width: 576px) {
+    .billing__option {
+        padding-inline: .75rem;
+    }
+
+    .billing__option[data-billing="annual"] {
+        flex-direction: column;
+        gap: .25rem;
+    }
+
+    .pricing-card--featured {
+        padding-top: var(--space-2xl);
+    }
+
     .hero__eyebrow {
         gap: .75rem;
         letter-spacing: .16em;
