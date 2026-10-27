@@ -1,6 +1,6 @@
 # SumaqAgro — Landing Page
 
-[![Release](https://img.shields.io/badge/release-v1.1.0-brightgreen.svg)](#versionado-y-flujo-de-trabajo)
+[![Release](https://img.shields.io/badge/release-v3.0.0-brightgreen.svg)](#versionado-y-flujo-de-trabajo)
 [![Stack](https://img.shields.io/badge/stack-HTML5%20%7C%20CSS3%20%7C%20JavaScript%20vanilla-blue.svg)](#stack-tecnológico)
 [![i18n](https://img.shields.io/badge/i18n-ES%20%7C%20EN-orange.svg)](#internacionalización-es--en)
 [![Course](https://img.shields.io/badge/UPC-1ASI0729%20Open%20Source-red.svg)](https://www.upc.edu.pe/)
@@ -42,31 +42,40 @@ Este landing page es la **puerta de entrada comercial** de SumaqAgro: comunica l
 
 ## Secciones del Sitio
 
-| Sección | Ancla | Descripción |
-|---|---|---|
-| Hero | `#hero` | Propuesta de valor y llamada a la acción principal |
-| Nosotros | `#about` | Misión y visión: democratizar la agricultura de precisión en el Perú |
-| Nuestro equipo | `#team` | Perfiles de los 5 integrantes |
-| ¿A quién ayudamos? | — | Agricultores independientes, líderes de cooperativas y asesores técnicos |
-| Soluciones y características | `#solutions` | Las 4 capacidades centrales del producto |
-| Demo | `#demo` | Reproductor de video "Conoce SumaqAgro en acción" |
-| Planes | `#plans` | Planes de suscripción con selector mensual/anual |
-| Impacto | `#impact` | Métricas de impacto |
-| Testimonios | — | Opiniones de usuarios |
-| CTA | `#cta` | Llamado final a empezar |
-| Footer | — | Enlaces rápidos, soporte y páginas legales |
+La landing sigue un recorrido de conversión: **propuesta de valor → problema → solución → prueba → precio → confianza → acción**. Cada bloque responde a una historia de usuario de la épica EPIC-01 del reporte.
+
+| # | Sección | Ancla | Objetivo | US |
+|---|---|---|---|---|
+| 1 | Hero | `#hero` | Propuesta de valor, captura real de la app y CTA "Empieza gratis" | US-01 |
+| 2 | El desafío | `#problem` | Problemas del productor y cifras oficiales con fuente (MIDAGRI, INEI, JNC) | US-01 |
+| 3 | Soluciones | `#solutions` | Los 4 módulos con filtro por perfil (Agricultor, Cooperativa, Asesor) | US-06 |
+| 4 | Cómo funciona | `#how-it-works` | 3 pasos de uso y vista Salud del Cultivo | US-06 |
+| 5 | Demo | `#demo` | Video con carga diferida (miniatura → reproductor) | US-05 |
+| 6 | ¿A quién ayudamos? | `#audience` | Beneficios, plan recomendado y CTA por segmento | US-06 |
+| 7 | Planes | `#plans` | Semilla, Cooperativa Pro y Asesor Técnico con facturación mensual/anual | US-07 |
+| 8 | Impacto y testimonios | `#impact` | Metas de impacto (hipótesis Lean UX) y carrusel de testimonios | US-08 |
+| 9 | Nosotros y equipo | `#about`, `#team` | Misión, visión, perfiles con enlace a GitHub y video del equipo | US-04 |
+| 10 | Preguntas frecuentes | `#faq` | Resuelve objeciones antes de registrarse | — |
+| 11 | CTA final | `#cta` | Selector de perfil que recomienda el plan y lleva al registro | US-07 |
+| 12 | Footer | — | Navegación, contacto y políticas legales en ventana modal | US-09 |
 
 ### Páginas Legales
+- [`public/sections/policy.html`](public/sections/policy.html) — Política de Privacidad
+- [`public/sections/service.html`](public/sections/service.html) — Términos de Servicio
+- [`public/sections/cookie.html`](public/sections/cookie.html) — Política de Cookies
 
 ---
 
 ## Características Técnicas
 
-- **Selector de facturación:** alterna precios mensual/anual y sincroniza el periodo (`/mes` · `/año`) con el idioma activo.
+- **Bilingüe ES/EN:** traducción dinámica mediante `data-i18n` (contenido) y `data-i18n-attr` (atributos como `alt` o `aria-label`); el idioma inicial se toma de `localStorage` o del navegador.
+- **Selector de facturación:** alterna precios mensual/anual, muestra el equivalente mensual y sincroniza el periodo (`/mes` · `/año`) con el idioma activo.
+- **Conversión:** CTA principal repetido en hero, segmentos, planes y cierre; el selector de perfil del CTA final envía el plan elegido (`?plan=`) a la aplicación web.
+- **Políticas legales en modal:** los enlaces legales abren un `<dialog>` con el contenido de la página legal y, si no es posible, navegan a la página completa.
 - **Responsive Design:** media queries y menú móvil (hamburguesa) para móvil, tablet y escritorio.
 - **SEO y Open Graph:** meta tags, título descriptivo y propiedades `og:*` en el `<head>`.
 - **Accesibilidad:** HTML semántico, `aria-labelledby`, `aria-live` y etiquetas dinámicas en el botón de idioma.
-- **Rendimiento:** fuentes Inter autoalojadas (sin CDN), iconos SVG y sin dependencias de terceros.
+- **Rendimiento:** imágenes WebP optimizadas (~620 KB en total), carga diferida de imágenes y video, e Inter autoalojada.
 
 ---
 
@@ -75,8 +84,11 @@ Este landing page es la **puerta de entrada comercial** de SumaqAgro: comunica l
 | Capa | Tecnología |
 |---|---|
 | Marcado | HTML5 semántico |
-| Tipografía | Inter (200–900), autoalojada |
-| Iconografía | SVG |
+| Estilos | CSS3 (`public/assets/css/styles.css`) |
+| Lógica | JavaScript vanilla (`public/assets/js/script.js`) |
+| i18n | Módulos de traducción (`public/assets/js/i18n/`) |
+| Tipografía | Poppins (títulos, Google Fonts) e Inter (texto, autoalojada) |
+| Iconografía | Material Symbols Outlined y SVG |
 | Gestión de proyecto | Jira, Miro, GitHub |
 
 > **Nota de Alcance:** SumaqAgro es exclusivamente software en la nube; no contempla sensores físicos ni dispositivos IoT.
@@ -89,6 +101,7 @@ No requiere compilación ni instalación de dependencias.
 
 ```bash
 # 1. Clonar el repositorio
+git clone [https://github.com/dymbia-opensource/sumaqAgro-landing-page.git](https://github.com/dymbia-opensource/sumaqAgro-landing-page.git)
 cd sumaqAgro-landing-page
 
 # 2. Abrir directamente index.html en el navegador, o servirlo localmente:
@@ -100,7 +113,23 @@ python3 -m http.server 8080
 
 ```text
 sumaqAgro-landing-page/
-├── index.html                # Página principal
+├── public/
+│   ├── assets/
+│   │   ├── css/
+│   │   │   └── styles.css          # Estilos globales y media queries responsive
+│   │   ├── fonts/                  # Inter (400–700) en .ttf
+│   │   ├── images/                 # Logos y fotos en WebP, capturas de la app
+│   │   └── js/
+│   │       ├── i18n/               # Diccionarios de internacionalización
+│   │       │   ├── en.js           # Traducción al inglés
+│   │       │   └── es.js           # Traducción al español
+│   │       └── script.js           # Lógica principal, menú móvil, billing y toggle i18n
+│   └── sections/                   # Páginas secundarias y legales
+│       ├── cookie.html             # Política de Cookies
+│       ├── policy.html             # Política de Privacidad
+│       └── service.html            # Términos de Servicio
+├── index.html                      # Página principal
+├── 404.html                        # Página no encontrada (Cloudflare Pages)
 ├── package.json
 ├── .gitignore
 └── README.md
@@ -123,8 +152,9 @@ sumaqAgro-landing-page/
 - **GitFlow:** ramas `main` (producción), `develop` (integración), `feature/*`, `release/*` y `fix/*`.
 - **Conventional Commits:** `feat(landing): …`, `fix(i18n): …`, `style(footer): …`.
 - **Releases:**
-  - `v1.0.0` — Landing page inicial, i18n, SEO y equipo.
-  - `v1.1.0` — Layout responsive, menú móvil y correcciones de páginas legales.
+    - `v1.0.0` — Landing page inicial, i18n, SEO y equipo.
+    - `v1.1.0` — Layout responsive, menú móvil y correcciones de páginas legales.
+    - `v3.0.0` — Rediseño orientado a conversión (problema, cómo funciona, FAQ, selector de plan) y optimización de imágenes.
 
 ---
 
