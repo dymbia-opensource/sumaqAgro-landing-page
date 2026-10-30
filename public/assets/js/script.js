@@ -656,6 +656,29 @@ function initLegalDialog() {
     });
 }
 
+
+/* ---------- HTML partials ---------- */
+
+const PARTIALS = {
+    'container-header': 'public/components/_header.html',
+    'container-footer': 'public/components/_footer.html'
+};
+
+async function loadPartials() {
+    await Promise.all(Object.entries(PARTIALS).map(async ([id, url]) => {
+        const container = document.getElementById(id);
+        if (!container) return;
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            container.innerHTML = await response.text();
+        } catch (error) {
+            console.error(`Could not load ${url} into #${id}`, error);
+        }
+    }));
+}
+
 /* ---------- App ---------- */
 
 function initApp() {
@@ -681,8 +704,14 @@ function initApp() {
     initLegalDialog();
 }
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initApp);
-} else {
+async function startApp() {
+    await loadPartials();
     initApp();
 }
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startApp);
+} else {
+    startApp();
+}
+
